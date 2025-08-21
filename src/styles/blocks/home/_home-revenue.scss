@@ -1,0 +1,42 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.home-revenue {
+
+  &__inner {
+    padding-top: fluid(160, 56);
+    padding-bottom: fluid(94, 30);
+    gap: fluid(58, 32);
+  }
+
+  &__title {
+    margin-bottom: fluid(24, 16);
+    color: $color-neutral-100;
+  }
+
+  &__text {
+    margin-bottom: fluid(40, 24);
+
+    @include mobile-above {
+      max-width: rem(360);
+    }
+  }
+
+  &__list {
+    padding: 0;
+    width: 100%;
+
+    @include mobile-above {
+      max-width: rem(393);
+    }
+  }
+
+  &__item {
+    column-gap: fluid(20, 8);
+    color: $color-neutral-100;
+
+    &:not(:last-child) {
+      margin-bottom: fluid(32, 16);
+    }
+  }
+}

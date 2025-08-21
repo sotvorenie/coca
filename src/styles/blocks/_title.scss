@@ -1,0 +1,11 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.title {
+  margin-bottom: fluid(80, 32);
+
+  &__title {
+    margin-bottom: fluid(24, 16);
+    color: $color-neutral-100;
+  }
+}

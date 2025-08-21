@@ -1,0 +1,26 @@
+@use 'helpers/index' as *;
+
+$font-family-base: 'Inter', sans-serif;
+
+$color-dark: #000000;
+$color-neutral-100: #1D1E25;
+$color-neutral-60: #7E8492;
+$color-neutral-50: #AFB3BB;
+$color-neutral-40: #CED1D8;
+$color-neutral-30: #EDEDED;
+$color-neutral-10: #FFFFFF;
+$color-grey-60: #161A3499;
+$color-accent: #1463FF;
+
+$border-dark: 1px solid $color-dark;
+$border-grey-50: 1px solid $color-neutral-50;
+$border-grey-40: 1px solid $color-neutral-40;
+$border-grey-30: 1px solid $color-neutral-30;
+
+$radius: rem(100);
+$radius-small: rem(8);
+
+$container-width: rem(1920);
+$container-padding-x: fluid(100, 20);
+
+$transition-duration: 0.2s;

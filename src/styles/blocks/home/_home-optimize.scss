@@ -1,0 +1,79 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.home-optimize {
+
+  &__inner {
+    padding-top: fluid(160, 56);
+    padding-bottom: fluid(100, 56);
+  }
+
+  &__title {
+    margin-bottom: fluid(24, 16);
+    color: $color-neutral-100;
+
+    @include mobile-above {
+      max-width: rem(601);
+    }
+  }
+
+  &__text {
+    margin-bottom: fluid(80, 32);
+
+    @include mobile-above {
+      max-width: rem(462);
+    }
+  }
+
+  &__list {
+    display: grid;
+    column-gap: rem(64);
+    row-gap: fluid(56, 24);
+    padding: 0;
+
+    @include mobile-above {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
+  &__item {
+    column-gap: fluid(60, 16);
+
+    &-title {
+      margin-bottom: fluid(24, 8);
+      color: $color-neutral-100;
+    }
+  }
+
+  &__info {
+    @include mobile-above {
+      max-width: rem(268);
+    }
+  }
+
+  &__img-container {
+    height: fluid(273, 216);
+    width: fluid(240, 160);
+    min-width: rem(160);
+    position: relative;
+  }
+
+  &__icon {
+    @include square(56);
+
+    position: absolute;
+    top: rem(12);
+    right: rem(12);
+    border-radius: 50%;
+    background: $color-grey-60;
+
+    i {
+      @include flex-center();
+    }
+
+    @include mobile {
+      @include square(40);
+    }
+  }
+}

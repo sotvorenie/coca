@@ -1,0 +1,53 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.home-news {
+
+  &__inner {
+    padding-top: fluid(60, 0);
+    padding-bottom: fluid(91, 39);
+  }
+
+  &__swiper {
+    position: relative;
+
+    @include mobile {
+      width: calc(100vw - $container-padding-x);
+      padding-right: $container-padding-x !important;
+    }
+
+    &-slide {
+      row-gap: fluid(16, 8);
+
+      h4 {
+        color: $color-neutral-100;
+      }
+    }
+
+    &-btn-bar {
+      @include square(80);
+      @include abs-x;
+      @include flex-center();
+
+      background: $color-neutral-10;
+      border-radius: 50%;
+      z-index: 1;
+      top: fluid(126, 76);
+      cursor: pointer;
+
+      @include mobile {
+        @include square(40);
+
+        left: calc(100% - ($container-padding-x * 2 + 1.33vw));
+
+        svg {
+          width: rem(24);
+        }
+      }
+    }
+  }
+
+  &__img-container {
+    height: fluid(332, 191);
+  }
+}

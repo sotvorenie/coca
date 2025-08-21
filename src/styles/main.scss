@@ -1,0 +1,24 @@
+@use "../../node_modules/bootstrap/scss/bootstrap" as *;
+
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use 'blocks/line';
+@use 'blocks/button';
+@use 'blocks/orange-shadow';
+@use 'blocks/title';
+
+@use 'blocks/header/header';
+@use 'blocks/header/header-burger';
+
+@use 'blocks/home/home-banner';
+@use 'blocks/home/home-helps';
+@use 'blocks/home/home-revenue';
+@use 'blocks/home/home-numbers';
+@use 'blocks/home/home-sponsors';
+@use 'blocks/home/home-optimize';
+@use 'blocks/home/home-news';
+@use 'blocks/home/home-comments';

@@ -1,0 +1,59 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.home-helps {
+  background: $color-neutral-100;
+
+  &__inner {
+    padding-block: fluid(100, 40);
+  }
+
+  h2, h4 {
+    color: $color-neutral-10;
+  }
+
+  &__title {
+    margin-bottom: fluid(24, 16);
+
+    @include mobile-above {
+      max-width: rem(816);
+    }
+  }
+
+  &__text {
+    margin-bottom: fluid(80, 32);
+
+    @include mobile-above {
+      max-width: rem(660);
+    }
+  }
+
+  &__list {
+    gap: fluid(56, 24);
+    padding: 0;
+  }
+
+  &__item {
+    row-gap: fluid(24, 16);
+
+    @include mobile-above {
+      h4 {
+        max-width: rem(249);
+      }
+
+      p {
+        max-width: rem(446);
+      }
+    }
+  }
+
+  &__icon {
+    width: fluid(40, 24);
+    height: fluid(40, 24);
+    color: $color-neutral-10;
+
+    svg {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use 'helpers/index' as *;
+@use 'variables' as *;
+
+.container {
+  max-width: calc($container-width + $container-padding-x * 2);
+  margin-inline: auto;
+  padding-inline: $container-padding-x;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.recolor-svg {
+  svg [stroke]:not([stroke="none"]) {
+    stroke: currentColor;
+
+    * {
+      stroke: currentColor;
+    }
+  }
+
+  svg [fill]:not([fill="none"]) {
+    fill: currentColor;
+
+    * {
+      fill: currentColor;
+    }
+  }
+}
+
+.img-container {
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition-duration: $transition-duration;
+    object-fit: cover;
+
+    @include hover {
+      scale: 1.05;
+    }
+  }
+}

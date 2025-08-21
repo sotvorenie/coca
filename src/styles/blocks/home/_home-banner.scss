@@ -1,0 +1,73 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.home-banner {
+
+  &__inner {
+    padding-top: fluid(87, 32);
+    color: $color-neutral-100;
+  }
+
+  &__title {
+    @include fluid-text(80, 32);
+
+    margin-bottom: fluid(114, 48);
+
+    @include mobile-above {
+      max-width: rem(740);
+    }
+  }
+
+  &__text {
+    column-gap: fluid(27, 8);
+    margin-bottom: fluid(69, 40);
+
+    p {
+      @include mobile-above {
+        max-width: rem(514);
+      }
+    }
+
+    .line {
+      margin-top: 22px;
+    }
+  }
+
+  &__form {
+    column-gap: fluid(16, 8);
+
+    input {
+      border-bottom: $border-grey-40;
+      width: fluid(280, 219);
+      height: rem(47);
+      font-size: rem(16);
+
+      &::placeholder {
+        color: $color-neutral-60;
+      }
+
+      @include mobile {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  &__submit {
+    padding-inline: fluid(44, 16);
+  }
+
+  &__img {
+    width: fluid-size(345, 864, 45vw);
+    margin-right: calc($container-padding-x * -1);
+
+    @include mobile-above {
+      margin-top: rem(-60);
+    }
+
+    @include mobile {
+      width: calc(100vw - $container-padding-x);
+      margin-right: calc($container-padding-x * -5);
+      max-width: none;
+    }
+  }
+}

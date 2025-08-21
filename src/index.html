@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <script type="module" src="scripts/main.js"></script>
+</head>
+<body>
+
+    <img class="orange-shadow" src="assets/images/orange-shadow.png"/>
+
+    <header class="header">
+        <div class="header__inner container d-flex justify-content-between align-items-center">
+            <a href="/" class="header__logo">
+                <svg width="140" height="66" viewBox="0 0 140 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M68.1455 35.9848L72.722 38.3558C71.7651 39.6044 70.5655 40.6072 69.1232 41.3643C67.6809 42.1214 66.1069 42.5 64.4011 42.5C62.4873 42.5 60.7399 42.0285 59.159 41.0854C57.5919 40.1423 56.3368 38.8805 55.3937 37.2998C54.4646 35.7059 54 33.9459 54 32.0199C54 30.5588 54.2704 29.1973 54.8113 27.9355C55.3521 26.6603 56.0941 25.5446 57.0371 24.5882C57.994 23.6186 59.1035 22.8615 60.3655 22.3169C61.6275 21.7723 62.9727 21.5 64.4011 21.5C66.1069 21.5 67.6809 21.8786 69.1232 22.6357C70.5655 23.3928 71.7651 24.4089 72.722 25.6841L68.1455 28.0351C67.6601 27.5038 67.0846 27.092 66.4189 26.7998C65.7671 26.5076 65.0945 26.3615 64.4011 26.3615C63.4026 26.3615 62.5012 26.6271 61.6968 27.1584C60.8925 27.6765 60.2545 28.3672 59.783 29.2305C59.3115 30.0806 59.0757 31.0104 59.0757 32.0199C59.0757 33.0161 59.3115 33.9459 59.783 34.8093C60.2545 35.6594 60.8925 36.3435 61.6968 36.8615C62.5012 37.3795 63.4026 37.6385 64.4011 37.6385C65.1223 37.6385 65.8087 37.4924 66.4605 37.2002C67.1123 36.8947 67.674 36.4896 68.1455 35.9848Z" fill="#101010"/>
+                    <path d="M84.9596 42.5C83.0458 42.5 81.2984 42.0285 79.7174 41.0854C78.1503 40.1423 76.8952 38.8805 75.9522 37.2998C75.023 35.7059 74.5585 33.9459 74.5585 32.0199C74.5585 30.5588 74.8289 29.1973 75.3697 27.9355C75.9106 26.6603 76.6525 25.5446 77.5956 24.5882C78.5525 23.6186 79.6619 22.8615 80.9239 22.3169C82.1859 21.7723 83.5312 21.5 84.9596 21.5C86.8734 21.5 88.6138 21.9715 90.1809 22.9146C91.7619 23.8577 93.017 25.1262 93.9461 26.7201C94.8892 28.314 95.3607 30.0806 95.3607 32.0199C95.3607 33.4677 95.0903 34.8226 94.5494 36.0844C94.0085 37.3463 93.2597 38.4621 92.3028 39.4317C91.3597 40.388 90.2572 41.1385 88.9952 41.6831C87.7471 42.2277 86.4019 42.5 84.9596 42.5ZM84.9596 37.6385C85.9719 37.6385 86.8803 37.3795 87.6847 36.8615C88.489 36.3435 89.12 35.6594 89.5777 34.8093C90.0492 33.9592 90.2849 33.0294 90.2849 32.0199C90.2849 30.9839 90.0422 30.0408 89.5569 29.1907C89.0853 28.3273 88.4405 27.6433 87.6223 27.1385C86.8179 26.6205 85.9303 26.3615 84.9596 26.3615C83.9611 26.3615 83.0596 26.6205 82.2553 27.1385C81.4509 27.6565 80.813 28.3472 80.3415 29.2106C79.87 30.074 79.6342 31.0104 79.6342 32.0199C79.6342 33.0693 79.8769 34.019 80.3623 34.8691C80.8477 35.7192 81.4925 36.3966 82.2969 36.9013C83.1151 37.3928 84.0027 37.6385 84.9596 37.6385Z" fill="#101010"/>
+                    <path d="M111.578 35.9848L116.155 38.3558C115.198 39.6044 113.998 40.6072 112.556 41.3643C111.114 42.1214 109.54 42.5 107.834 42.5C105.92 42.5 104.173 42.0285 102.592 41.0854C101.025 40.1423 99.7696 38.8805 98.8265 37.2998C97.8974 35.7059 97.4328 33.9459 97.4328 32.0199C97.4328 30.5588 97.7032 29.1973 98.2441 27.9355C98.7849 26.6603 99.5269 25.5446 100.47 24.5882C101.427 23.6186 102.536 22.8615 103.798 22.3169C105.06 21.7723 106.405 21.5 107.834 21.5C109.54 21.5 111.114 21.8786 112.556 22.6357C113.998 23.3928 115.198 24.4089 116.155 25.6841L111.578 28.0351C111.093 27.5038 110.517 27.092 109.852 26.7998C109.2 26.5076 108.527 26.3615 107.834 26.3615C106.835 26.3615 105.934 26.6271 105.13 27.1584C104.325 27.6765 103.687 28.3672 103.216 29.2305C102.744 30.0806 102.509 31.0104 102.509 32.0199C102.509 33.0161 102.744 33.9459 103.216 34.8093C103.687 35.6594 104.325 36.3435 105.13 36.8615C105.934 37.3795 106.835 37.6385 107.834 37.6385C108.555 37.6385 109.242 37.4924 109.893 37.2002C110.545 36.8947 111.107 36.4896 111.578 35.9848Z" fill="#101010"/>
+                    <path d="M134.924 22.0579H140V41.982H134.924L134.695 39.5114C134.127 40.4013 133.371 41.1252 132.428 41.6831C131.499 42.2277 130.396 42.5 129.12 42.5C127.581 42.5 126.139 42.2211 124.794 41.6632C123.448 41.1053 122.263 40.3349 121.236 39.352C120.224 38.3691 119.427 37.2334 118.844 35.945C118.276 34.6565 117.991 33.2751 117.991 31.8008C117.991 30.3795 118.262 29.0446 118.803 27.796C119.357 26.5474 120.127 25.4516 121.112 24.5085C122.096 23.5655 123.233 22.8283 124.523 22.297C125.813 21.7657 127.2 21.5 128.684 21.5C130.057 21.5 131.284 21.7922 132.366 22.3767C133.461 22.9611 134.39 23.7049 135.153 24.6082L134.924 22.0579ZM128.996 37.8178C130.077 37.8178 131.034 37.5588 131.866 37.0408C132.698 36.5228 133.35 35.8254 133.822 34.9488C134.293 34.0588 134.529 33.0825 134.529 32.0199C134.529 30.944 134.293 29.9677 133.822 29.0911C133.35 28.2011 132.691 27.4972 131.846 26.9791C131.013 26.4611 130.063 26.2021 128.996 26.2021C127.928 26.2021 126.95 26.4677 126.062 26.9991C125.189 27.5171 124.488 28.2144 123.961 29.0911C123.448 29.9677 123.192 30.944 123.192 32.0199C123.192 33.0958 123.455 34.0721 123.982 34.9488C124.509 35.8254 125.21 36.5228 126.083 37.0408C126.971 37.5588 127.942 37.8178 128.996 37.8178Z" fill="#101010"/>
+                    <circle cx="21" cy="30.5" r="21" fill="#101010"/>
+                    <path d="M27.4483 35.4412L32 37.741C30.8906 39.1831 29.4794 40.3368 27.7664 41.2021C26.0697 42.0674 24.2262 42.5 22.2358 42.5C19.9844 42.5 17.9288 41.9611 16.069 40.8833C14.2254 39.8055 12.749 38.3634 11.6396 36.5569C10.5465 34.7353 10 32.7239 10 30.5228C10 28.8529 10.3181 27.297 10.9544 25.8548C11.5907 24.3975 12.4635 23.1224 13.5729 22.0294C14.6986 20.9213 16.0037 20.056 17.4883 19.4336C18.9729 18.8112 20.5554 18.5 22.2358 18.5C24.2262 18.5 26.0697 18.9326 27.7664 19.7979C29.4794 20.6632 30.8906 21.8245 32 23.2818L27.4483 25.5816C26.7631 24.8226 25.9637 24.2457 25.0501 23.851C24.1364 23.4412 23.1984 23.2362 22.2358 23.2362C20.898 23.2362 19.6826 23.5778 18.5895 24.2609C17.5128 24.9288 16.6563 25.8169 16.02 26.925C15.4001 28.018 15.0901 29.2173 15.0901 30.5228C15.0901 31.8131 15.4082 33.0123 16.0445 34.1205C16.6808 35.2135 17.5373 36.0939 18.614 36.7619C19.7071 37.4298 20.9143 37.7638 22.2358 37.7638C23.2473 37.7638 24.2099 37.5512 25.1235 37.1262C26.0371 36.7011 26.812 36.1395 27.4483 35.4412Z" fill="white"/>
+                </svg>
+            </a>
+
+            <div class="header__right hidden-mobile d-flex align-items-center">
+                <nav class="header_nav">
+                    <ul class="header_nav__list d-flex">
+                        <li class="header_nav__item">
+                            <a href="/" class="header_nav__link there">Home</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/about" class="header_nav__link">About</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/blog" class="header_nav__link">Blog</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/pricing" class="header_nav__link">Pricing</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="/contact" class="header__contact fw-semibold text-nowrap">Contact Us -></a>
+            </div>
+
+            <button class="header-burger visible-mobile" type="button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 5.99999C3.59961 5.33725 4.13687 4.79999 4.79961 4.79999H19.1996C19.8624 4.79999 20.3996 5.33725 20.3996 5.99999C20.3996 6.66273 19.8624 7.19999 19.1996 7.19999H4.79961C4.13687 7.19999 3.59961 6.66273 3.59961 5.99999Z" fill="#101010"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 12C3.59961 11.3372 4.13687 10.8 4.79961 10.8H19.1996C19.8624 10.8 20.3996 11.3372 20.3996 12C20.3996 12.6627 19.8624 13.2 19.1996 13.2H4.79961C4.13687 13.2 3.59961 12.6627 3.59961 12Z" fill="#101010"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7996 18C10.7996 17.3372 11.3369 16.8 11.9996 16.8H19.1996C19.8624 16.8 20.3996 17.3372 20.3996 18C20.3996 18.6627 19.8624 19.2 19.1996 19.2H11.9996C11.3369 19.2 10.7996 18.6627 10.7996 18Z" fill="#101010"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="main home">
+        <section class="home-banner">
+            <div class="home-banner__inner container d-flex flex-column flex-md-row justify-content-between">
+                <div class="home-banner__left">
+                    <h1 class="home-banner__title">Digitally forward creative</h1>
+
+                    <div class="home-banner__text d-flex">
+                        <div class="line"></div>
+                        <p class="h4">When it comes to interactive marketing, we've got you covered. Be where the world is going</p>
+                    </div>
+
+                    <form class="home-banner__form d-flex align-items-end">
+                        <input type="text" class="home-banner__input" placeholder="Enter your email">
+                        <button class="home-banner__submit button button-black" type="submit">Try for free</button>
+                    </form>
+                </div>
+
+                <img class="home-banner__img" src="assets/images/home/banner.png" height="650" width="605"/>
+            </div>
+        </section>
+
+        <section class="home-helps">
+            <div class="home-helps__inner container">
+                <div class="title">
+                    <h2 class="home-helps__title title__title">Coca help our client solve complex customer problems with date that does more.</h2>
+                    <p class="home-helps__text">Our platform offers the modern enterprise full control of how date can be access and used with industry leading software solutions for identity, activation, and date collaboration</p>
+                </div>
+
+                <ul class="home-helps__list d-flex flex-wrap justify-content-between">
+                    <li class="home-helps__item col-12 col-md-5 d-flex flex-column">
+                        <i class="home-helps__icon recolor-svg">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 11.6667V5M26.6667 11.6667V5M11.6667 18.3333H28.3333M8.33333 35H31.6667C33.5076 35 35 33.5076 35 31.6667V11.6667C35 9.82572 33.5076 8.33333 31.6667 8.33333H8.33333C6.49238 8.33333 5 9.82572 5 11.6667V31.6667C5 33.5076 6.49238 35 8.33333 35Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </i>
+
+                        <h4>Build your date fundamental</h4>
+
+                        <p>Build access to date, develop valuable business insights and drive revenue while maintaining full control over access and use of date at all times.</p>
+                    </li>
+                    <li class="home-helps__item col-12 col-md-5 d-flex flex-column">
+                        <i class="home-helps__icon recolor-svg">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.0608 22.2727C15.475 21.6869 14.5253 21.6869 13.9395 22.2727C13.3537 22.8585 13.3537 23.8082 13.9395 24.394L16.0608 22.2727ZM18.3335 26.6667L17.2728 27.7273C17.8586 28.3131 18.8084 28.3131 19.3942 27.7273L18.3335 26.6667ZM26.0608 21.0607C26.6466 20.4749 26.6466 19.5251 26.0608 18.9393C25.475 18.3536 24.5253 18.3536 23.9395 18.9393L26.0608 21.0607ZM30.1668 11.6667V31.6667H33.1668V11.6667H30.1668ZM28.3335 33.5H11.6668V36.5H28.3335V33.5ZM9.8335 31.6667V11.6667H6.8335V31.6667H9.8335ZM11.6668 9.83333H15.0002V6.83333H11.6668V9.83333ZM25.0002 9.83333H28.3335V6.83333H25.0002V9.83333ZM11.6668 33.5C10.6543 33.5 9.8335 32.6792 9.8335 31.6667H6.8335C6.8335 34.336 8.99745 36.5 11.6668 36.5V33.5ZM30.1668 31.6667C30.1668 32.6792 29.346 33.5 28.3335 33.5V36.5C31.0029 36.5 33.1668 34.336 33.1668 31.6667H30.1668ZM33.1668 11.6667C33.1668 8.99729 31.0029 6.83333 28.3335 6.83333V9.83333C29.346 9.83333 30.1668 10.6541 30.1668 11.6667H33.1668ZM9.8335 11.6667C9.8335 10.6541 10.6543 9.83333 11.6668 9.83333V6.83333C8.99745 6.83333 6.8335 8.99729 6.8335 11.6667H9.8335ZM13.9395 24.394L17.2728 27.7273L19.3942 25.606L16.0608 22.2727L13.9395 24.394ZM19.3942 27.7273L26.0608 21.0607L23.9395 18.9393L17.2728 25.606L19.3942 27.7273ZM18.3335 6.5H21.6668V3.5H18.3335V6.5ZM21.6668 10.1667H18.3335V13.1667H21.6668V10.1667ZM18.3335 10.1667C17.321 10.1667 16.5002 9.34586 16.5002 8.33333H13.5002C13.5002 11.0027 15.6641 13.1667 18.3335 13.1667V10.1667ZM23.5002 8.33333C23.5002 9.34586 22.6794 10.1667 21.6668 10.1667V13.1667C24.3362 13.1667 26.5002 11.0027 26.5002 8.33333H23.5002ZM21.6668 6.5C22.6794 6.5 23.5002 7.32081 23.5002 8.33333H26.5002C26.5002 5.66396 24.3362 3.5 21.6668 3.5V6.5ZM18.3335 3.5C15.6641 3.5 13.5002 5.66396 13.5002 8.33333H16.5002C16.5002 7.32081 17.321 6.5 18.3335 6.5V3.5Z" fill="white"/>
+                            </svg>
+                        </i>
+
+                        <h4>Measure more effective</h4>
+
+                        <p>Effectively measure people-based campaigns with the freedom to choose from best-of breed partners to optimize and drive media innovation.</p>
+                    </li>
+                    <li class="home-helps__item col-12 col-md-5 d-flex flex-column">
+                        <i class="home-helps__icon recolor-svg">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.0002 8.33333H11.6668C9.82588 8.33333 8.3335 9.82572 8.3335 11.6667V31.6667C8.3335 33.5076 9.82588 35 11.6668 35H28.3335C30.1744 35 31.6668 33.5076 31.6668 31.6667V11.6667C31.6668 9.82572 30.1744 8.33333 28.3335 8.33333H25.0002M15.0002 8.33333C15.0002 10.1743 16.4925 11.6667 18.3335 11.6667H21.6668C23.5078 11.6667 25.0002 10.1743 25.0002 8.33333M15.0002 8.33333C15.0002 6.49238 16.4925 5 18.3335 5H21.6668C23.5078 5 25.0002 6.49238 25.0002 8.33333M20.0002 20H25.0002M20.0002 26.6667H25.0002M15.0002 20H15.0168M15.0002 26.6667H15.0168" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+
+                        <h4>Activate your date</h4>
+
+                        <p>Accurately address your specific audiences at scale across any channel, platform, publisher or network and safely translate date between identity space to improve results.</p>
+                    </li>
+                    <li class="home-helps__item col-12 col-md-5 d-flex flex-column">
+                        <i class="home-helps__icon recolor-svg">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 20L18.3333 23.3334L25 16.6667M34.3632 9.9739C34.0221 9.9912 33.6787 9.99995 33.3333 9.99995C28.2109 9.99995 23.5383 8.07422 19.9999 4.90723C16.4615 8.0741 11.789 9.99975 6.66667 9.99975C6.32129 9.99975 5.97796 9.99099 5.63688 9.9737C5.22117 11.5797 5 13.264 5 15C5 24.3192 11.3739 32.1497 20 34.3699C28.6261 32.1497 35 24.3192 35 15C35 13.2641 34.7788 11.5799 34.3632 9.9739Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </i>
+
+                        <h4>Strengthen consumer privacy</h4>
+
+                        <p>Protect your customer date with leading privacy-preserving technologies and advanced techniques to minimize date movement while still enabling insight generation.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="home-revenue">
+            <div class="home-revenue__inner container d-flex flex-column flex-md-row align-items-center">
+                <img class="home-revenue__image col-12 col-md-6" src="assets/images/home/revenue.png" height="651" width="585" alt="Revenue" loading="lazy"/>
+
+                <div class="home-revenue__right">
+                    <h2 class="home-revenue__title">Passion to increase company revenue up to 85%</h2>
+                    <p class="home-revenue__text">Automate your sales, marketing and service in one platform. Avoid date leaks and enable consistent messaging</p>
+
+                    <ul class="home-revenue__list">
+                        <li class="home-revenue__item d-flex align-items-center">
+                            <i class="home-revenue__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#46B277" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </i>
+                            <span>Close more deals with single - page contact managment</span>
+                        </li>
+                        <li class="home-revenue__item d-flex align-items-center">
+                            <i class="home-revenue__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#46B277" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </i>
+                            <span>Enjoy one-click calling, call scripts and voicemail automation</span>
+                        </li>
+                        <li class="home-revenue__item d-flex align-items-center">
+                            <i class="home-revenue__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#46B277" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </i>
+                            <span>Take stages and milestones of your deals to keep the sales process an track</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-numbers container">
+            <div class="home-numbers__inner">
+                <ul class="home-numbers__list d-flex flex-wrap align-items-center">
+                    <li class="home-numbers__item col-6 col-md">
+                        <h2>17k</h2>
+                        <p>happy customers on worldwide</p>
+                    </li>
+                    <li class="home-numbers__item col-6 col-md">
+                        <h2>15+</h2>
+                        <p>Hours of work experience</p>
+                    </li>
+                    <li class="home-numbers__item col-6 col-md">
+                        <h2>50+</h2>
+                        <p>Creativity & passionate members</p>
+                    </li>
+                    <li class="home-numbers__item col-6 col-md">
+                        <h2>100+</h2>
+                        <p>Integrations lorem ipsum integrations</p>
+                    </li>
+                </ul>
+
+                <img class="home-numbers__img" src="assets/images/home/numbers.png" height="536" width="1200" loading="lazy"/>
+
+                <div class="home-numbers__about d-flex flex-column flex-md-row justify-content-between">
+                    <h2 class="home-numbers__title">Lift your business to new heights with our digital marketing services</h2>
+                    <p class="home-numbers__text">To build software that gives customer facing teams in small and medium-sized businesses the ability to create rewarding and long-lasting relationships with customers</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-sponsors container">
+            <div class="home-sponsors__inner d-flex flex-column flex-md-row align-items-md-center">
+                <div class="home-sponsors__about">
+                    <h2 class="home-sponsors__title  fw-semibold">890+</h2>
+                    <span class="home-sponsors__text">some big companies that we work with, and trust us very much</span>
+                </div>
+
+                <ul class="home-sponsors__list row row-cols-2 row-cols-md-4 d-flex flex-wrap">
+                    <li class="home-sponsors__item col d-flex align-items-center justify-content-center">
+                        <img src="assets/images/home/sponsors/Airbnb Logo.png" height="30" width="98" alt="Airbnb" loading="lazy"/>
+                    </li>
+                    <li class="home-sponsors__item col d-flex align-items-center justify-content-center">
+                        <img src="assets/images/home/sponsors/Amazon Logo.png" height="30" width="98" alt="Amazon" loading="lazy"/>
+                    </li>
+                    <li class="home-sponsors__item col d-flex align-items-center justify-content-center">
+                        <img src="assets/images/home/sponsors/FedEx Logo.png" height="30" width="95" alt="FedEx" loading="lazy"/>
+                    </li>
+                    <li class="home-sponsors__item col d-flex align-items-center justify-content-center">
+                        <img src="assets/images/home/sponsors/Microsoft Logo.png" height="26" width="115" alt="Microsoft" loading="lazy"/>
+                    </li>
+                    <li class="home-sponsors__item col d-flex align-items-center justify-content-center">
+                        <img src="assets/images/home/sponsors/Google Logo.png" height="30" width="90" alt="Google" loading="lazy"/>
+                    </li>
+                    <li class="home-sponsors__item col d-flex align-items-center justify-content-center">
+                        <img src="assets/images/home/sponsors/OLA logo.png" height="32" width="93" alt="OLA" loading="lazy"/>
+                    </li>
+                    <li class="home-sponsors__item col d-flex align-items-center justify-content-center">
+                        <img src="assets/images/home/sponsors/Walmart Logo.png" height="28" width="113" alt="Walmart" loading="lazy"/>
+                    </li>
+                    <li class="home-sponsors__item col d-flex align-items-center justify-content-center">
+                        <img src="assets/images/home/sponsors/OYO Logo.png" height="30" width="81" alt="OYO" loading="lazy"/>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="home-optimize">
+            <div class="home-optimize__inner container">
+                <div class="title">
+                    <h2 class="home-optimize__title title__title">Advertise, analyze, and optimize! We do it all for you</h2>
+                    <p class="home-optimize__text">Build more meaningful and lasting relationships - better understand their needs, identify new opportunities to help address any problems faster</p>
+                </div>
+
+                <ul class="home-optimize__list">
+                    <li class="home-optimize__item d-flex align-items-center">
+                        <div class="home-optimize__img-container img-container">
+                            <img src="assets/images/home/optimize-1.png" height="273" width="240" alt="Optimize" loading="lazy"/>
+
+                            <div class="home-optimize__icon d-flex align-items-center justify-content-center">
+                                <i>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0001 21.5999C6.69816 21.5999 2.4001 17.3018 2.4001 11.9999C2.4001 6.69797 6.69816 2.3999 12.0001 2.3999C17.302 2.3999 21.6001 6.69797 21.6001 11.9999C21.6001 17.3018 17.302 21.5999 12.0001 21.5999ZM15.6001 10.7999C14.9374 10.7999 14.4001 10.2626 14.4001 9.5999C14.4001 8.93716 14.9374 8.3999 15.6001 8.3999C16.2628 8.3999 16.8001 8.93716 16.8001 9.5999C16.8001 10.2626 16.2628 10.7999 15.6001 10.7999ZM7.2001 9.5999C7.2001 10.2626 7.73736 10.7999 8.4001 10.7999C9.06284 10.7999 9.6001 10.2626 9.6001 9.5999C9.6001 8.93716 9.06284 8.3999 8.4001 8.3999C7.73736 8.3999 7.2001 8.93716 7.2001 9.5999ZM7.75746 16.2424C7.28883 15.7738 7.28883 15.014 7.75746 14.5454C8.22608 14.0767 8.98588 14.0767 9.45451 14.5454C10.8604 15.9513 13.1398 15.9513 14.5457 14.5454C15.0143 14.0767 15.7741 14.0767 16.2427 14.5454C16.7114 15.014 16.7114 15.7738 16.2427 16.2424C13.8996 18.5856 10.1006 18.5856 7.75746 16.2424Z" fill="white"/>
+                                    </svg>
+                                </i>
+                            </div>
+                        </div>
+
+                        <div class="home-optimize__info">
+                            <h4 class="home-optimize__item-title">Lead happiness for customers</h4>
+                            <p>Build more meaningful and lasting relationships - better understand their needs, identify new opportunities to help address any problems faster</p>
+                        </div>
+                    </li>
+                    <li class="home-optimize__item d-flex align-items-center">
+                        <div class="home-optimize__img-container img-container">
+                            <img src="assets/images/home/optimize-2.png" height="273" width="240" alt="Optimize" loading="lazy"/>
+
+                            <div class="home-optimize__icon d-flex align-items-center justify-content-center">
+                                <i>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3999 8.4C13.7372 8.4 13.1999 7.86274 13.1999 7.2C13.1999 6.53726 13.7372 6 14.3999 6H20.3999C21.0626 6 21.5999 6.53726 21.5999 7.2V13.2C21.5999 13.8627 21.0626 14.4 20.3999 14.4C19.7372 14.4 19.1999 13.8627 19.1999 13.2V10.0971L14.0484 15.2485C13.5798 15.7172 12.82 15.7172 12.3514 15.2485L9.5999 12.4971L4.44843 17.6485C3.9798 18.1172 3.22 18.1172 2.75137 17.6485C2.28275 17.1799 2.28275 16.4201 2.75137 15.9515L8.75137 9.95147C9.22 9.48284 9.9798 9.48284 10.4484 9.95147L13.1999 12.7029L17.5028 8.4H14.3999Z" fill="white"/>
+                                    </svg>
+                                </i>
+                            </div>
+                        </div>
+
+                        <div class="home-optimize__info">
+                            <h4 class="home-optimize__item-title">Mutually support each other</h4>
+                            <p>Build more meaningful and lasting relationships - better understand their needs, identify new opportunities to help address any problems faster</p>
+                        </div>
+                    </li>
+                    <li class="home-optimize__item d-flex align-items-center">
+                        <div class="home-optimize__img-container img-container">
+                            <img src="assets/images/home/optimize-3.png" height="273" width="240" alt="Optimize" loading="lazy"/>
+
+                            <div class="home-optimize__icon d-flex align-items-center justify-content-center">
+                                <i>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.6002 5.9999C15.6002 7.98813 13.9884 9.5999 12.0002 9.5999C10.012 9.5999 8.4002 7.98813 8.4002 5.9999C8.4002 4.01168 10.012 2.3999 12.0002 2.3999C13.9884 2.3999 15.6002 4.01168 15.6002 5.9999Z" fill="white"/>
+                                        <path d="M21.6002 8.3999C21.6002 9.72539 20.5257 10.7999 19.2002 10.7999C17.8747 10.7999 16.8002 9.72539 16.8002 8.3999C16.8002 7.07442 17.8747 5.9999 19.2002 5.9999C20.5257 5.9999 21.6002 7.07442 21.6002 8.3999Z" fill="white"/>
+                                        <path d="M16.8002 16.7999C16.8002 14.1489 14.6512 11.9999 12.0002 11.9999C9.34923 11.9999 7.2002 14.1489 7.2002 16.7999V20.3999H16.8002V16.7999Z" fill="white"/>
+                                        <path d="M7.2002 8.3999C7.2002 9.72539 6.12568 10.7999 4.8002 10.7999C3.47471 10.7999 2.4002 9.72539 2.4002 8.3999C2.4002 7.07442 3.47471 5.9999 4.8002 5.9999C6.12568 5.9999 7.2002 7.07442 7.2002 8.3999Z" fill="white"/>
+                                        <path d="M19.2002 20.3999V16.7999C19.2002 15.5349 18.874 14.3461 18.3011 13.3131C18.5885 13.2392 18.8897 13.1999 19.2002 13.1999C21.1884 13.1999 22.8002 14.8117 22.8002 16.7999V20.3999H19.2002Z" fill="white"/>
+                                        <path d="M5.69931 13.3131C5.12641 14.3461 4.8002 15.5349 4.8002 16.7999V20.3999H1.2002V16.7999C1.2002 14.8117 2.81197 13.1999 4.8002 13.1999C5.11065 13.1999 5.41192 13.2392 5.69931 13.3131Z" fill="white"/>
+                                    </svg>
+                                </i>
+                            </div>
+                        </div>
+
+                        <div class="home-optimize__info">
+                            <h4 class="home-optimize__item-title">Have fun growing together</h4>
+                            <p>Build more meaningful and lasting relationships - better understand their needs, identify new opportunities to help address any problems faster</p>
+                        </div>
+                    </li>
+                    <li class="home-optimize__item d-flex align-items-center">
+                        <div class="home-optimize__img-container img-container">
+                            <img src="assets/images/home/optimize-4.png" height="273" width="240" alt="Optimize" loading="lazy"/>
+
+                            <div class="home-optimize__icon d-flex align-items-center justify-content-center">
+                                <i>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5999 3.6001C2.93716 3.6001 2.3999 4.13736 2.3999 4.8001C2.3999 5.46284 2.93716 6.0001 3.5999 6.0001V15.6001C3.5999 16.9256 4.67442 18.0001 5.9999 18.0001H9.10285L7.55137 19.5516C7.08275 20.0202 7.08275 20.78 7.55137 21.2486C8.02 21.7173 8.7798 21.7173 9.24843 21.2486L11.9999 18.4972L14.7514 21.2486C15.22 21.7173 15.9798 21.7173 16.4484 21.2486C16.9171 20.78 16.9171 20.0202 16.4484 19.5516L14.897 18.0001H17.9999C19.3254 18.0001 20.3999 16.9256 20.3999 15.6001V6.0001C21.0626 6.0001 21.5999 5.46284 21.5999 4.8001C21.5999 4.13736 21.0626 3.6001 20.3999 3.6001H3.5999ZM17.6484 9.24863C18.1171 8.78 18.1171 8.0202 17.6484 7.55157C17.1798 7.08294 16.42 7.08294 15.9514 7.55157L11.9999 11.503L10.4484 9.95157C9.9798 9.48294 9.22 9.48294 8.75137 9.95157L6.35137 12.3516C5.88275 12.8202 5.88275 13.58 6.35137 14.0486C6.82 14.5173 7.5798 14.5173 8.04843 14.0486L9.5999 12.4972L11.1514 14.0486C11.62 14.5173 12.3798 14.5173 12.8484 14.0486L17.6484 9.24863Z" fill="white"/>
+                                    </svg>
+                                </i>
+                            </div>
+                        </div>
+
+                        <div class="home-optimize__info">
+                            <h4 class="home-optimize__item-title">Make Your Business Grow</h4>
+                            <p>Build more meaningful and lasting relationships - better understand their needs, identify new opportunities to help address any problems faster</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="home-news">
+            <div class="home-news__inner container">
+                <div class="title text-center">
+                    <h2 class="home-news__title title__title">Trending news from Coca</h2>
+                    <p class="home-news__text">we have some new Service to pamper you</p>
+                </div>
+
+                <div class="home-news__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="home-news__swiper-slide swiper-slide d-flex flex-column">
+                            <div class="home-news__img-container img-container">
+                                <img src="assets/images/home/news-1.png" height="332" width="582" alt="New" loading="lazy"/>
+                            </div>
+
+                            <div class="home-news__about d-flex align-items-center justify-content-between">
+                                <p>Published in Insight Jan 30, 2021</p>
+                                <p>by : Albert Sans</p>
+                            </div>
+
+                            <h4>What makes an authentic employee profile, and why does it matter ?</h4>
+                        </div>
+                        <div class="home-news__swiper-slide swiper-slide d-flex flex-column">
+                            <div class="home-news__img-container img-container">
+                                <img src="assets/images/home/news-2.png" height="332" width="582" alt="New" loading="lazy"/>
+                            </div>
+
+                            <div class="home-news__about d-flex align-items-center justify-content-between">
+                                <p>Published in Insight Jan 30, 2021</p>
+                                <p>by : Albert Sans</p>
+                            </div>
+
+                            <h4>How to build a Kaylen relationship with a good company</h4>
+                        </div>
+                    </div>
+
+                    <div class="home-news__swiper-btn-bar">
+                        <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.9998 2.3335L25.6665 9.00016L18.9998 15.6668M8.99984 15.6668L2.33317 9.00016L8.99984 2.3335" stroke="#7E8492" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-comments">
+            <div class="home-comments__inner container">
+                <div class="home-comments__info d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+                    <h2 class="home-comments__title">What our customer are saying</h2>
+                    <p class="home-comments__text">We are trusted numerous companies from different business to meet their needs</p>
+                </div>
+
+                <i class="home-comments__absolute position-absolute">
+                    <svg width="115" height="77" viewBox="0 0 115 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44.3282 77H0L28.37 0H57.5L44.3282 77ZM101.828 77H57.7533L86.1234 0H115L101.828 77Z" fill="#EDEDED"/>
+                    </svg>
+                </i>
+
+                <div class="home-comments__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="home-comments__swiper-slide swiper-slide d-flex flex-column">
+                            <div class="home-comments__stars d-flex align-items-center">
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+
+                                <span>5.0</span>
+                            </div>
+
+                            <h4 class="home-comments__comment flex-grow-1">“With Agency the results are very satisfying. wrapped with Hight quality and innovative design that makes a surge of visitors on my website”</h4>
+
+                            <div class="home-comments__person d-flex align-items-center">
+                                <div class="home-comments__img-container img-container">
+                                    <img src="assets/images/home/comments-1.jpg" height="640" width="640" alt="Person" loading="lazy"/>
+                                </div>
+
+                                <div class="home-comments__person-info">
+                                    <h6>Renee Wells</h6>
+                                    <p>Product Designer, Quotient</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home-comments__swiper-slide swiper-slide d-flex flex-column">
+                            <div class="home-comments__stars d-flex align-items-center">
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+                                <i>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.227 0.796478L13.2574 5.09148C13.4564 5.51312 13.8405 5.8055 14.2859 5.87316L18.8282 6.56543C19.9504 6.73699 20.397 8.17711 19.5848 9.00228L16.3002 12.344C15.9774 12.6727 15.8305 13.1451 15.9068 13.609L16.682 18.3268C16.8729 19.4939 15.6997 20.3843 14.6967 19.8322L10.6369 17.6032C10.2389 17.3845 9.76225 17.3845 9.3631 17.6032L5.30334 19.8322C4.30026 20.3843 3.1271 19.4939 3.31916 18.3268L4.09316 13.609C4.16952 13.1451 4.02259 12.6727 3.6998 12.344L0.4152 9.00228C-0.396983 8.17711 0.0496019 6.73699 1.17185 6.56543L5.71406 5.87316C6.15949 5.8055 6.54475 5.51312 6.74375 5.09148L8.77305 0.796478C9.27517 -0.265493 10.7248 -0.265493 11.227 0.796478Z" fill="#FFD33C"/>
+                                    </svg>
+                                </i>
+
+                                <span>5.0</span>
+                            </div>
+
+                            <h4 class="home-comments__comment flex-grow-1">“With Agency the results are very satisfying. wrapped with Hight quality and innovative design that makes a surge of visitors on my website”</h4>
+
+                            <div class="home-comments__person d-flex align-items-center">
+                                <div class="home-comments__img-container img-container">
+                                    <img src="assets/images/home/comments-2.jpg" height="640" width="640" alt="Person" loading="lazy"/>
+                                </div>
+
+                                <div class="home-comments__person-info">
+                                    <h6>Renee Wells</h6>
+                                    <p>Product Designer, Quotient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="home-comments__swiper-btn-bar position-absolute d-flex align-items-center">
+                        <button class="home-comments-prev" type="button"><-</button>
+                        <button class="home-comments-next active" type="button">-></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

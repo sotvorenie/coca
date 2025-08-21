@@ -1,0 +1,38 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.home-sponsors {
+
+  &__inner {
+    padding-block: fluid(86, 0);
+    column-gap: rem(30);
+
+    @include mobile-above {
+      padding-inline: calc($container-padding-x + rem(59));
+      border-bottom: $border-grey-30;
+    }
+  }
+
+  &__about {
+    max-width: rem(323);
+  }
+
+  &__title {
+    margin-bottom: rem(16);
+    color: $color-neutral-100;
+  }
+
+  &__list {
+    //column-gap: rem(30);
+    padding: 0;
+    width: 100%;
+
+    @include mobile {
+      width: 79%;
+    }
+  }
+
+  &__item {
+    height: rem(90);
+  }
+}

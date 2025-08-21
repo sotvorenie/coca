@@ -1,0 +1,35 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.button {
+  @include fluid-text(16, 12);
+
+  border-radius: $radius;
+  padding-block: rem(16);
+  transition-duration: $transition-duration;
+  flex-shrink: 0;
+
+  &-black {
+    font-weight: 700;
+    color: $color-neutral-10;
+    background: $color-neutral-100;
+
+    @include hover {
+      background: $color-neutral-10;
+      color: $color-neutral-100;
+      outline: 1px solid $color-neutral-100;
+    }
+  }
+
+  &-white {
+    font-weight: 600;
+    color: $color-neutral-100;
+    background: $color-neutral-10;
+
+    @include hover {
+      background: $color-neutral-100;
+      color: $color-neutral-10;
+      outline: 1px solid $color-neutral-10;
+    }
+  }
+}

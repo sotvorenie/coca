@@ -1,0 +1,16 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.orange-shadow {
+  position: absolute;
+  width: 62vw;
+  left: calc($container-padding-x * -1);
+  top: rem(-85);
+  z-index: -1;
+
+  @include mobile {
+    left: calc($container-padding-x * -2);
+    width: rem(368);
+    top: rem(-30);
+  }
+}

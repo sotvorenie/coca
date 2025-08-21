@@ -1,0 +1,104 @@
+@use 'helpers/index' as *;
+@use 'variables' as *;
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+body {
+  @include fluid-text(18, 14);
+
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-base;
+  color: $color-neutral-60;
+  font-weight: 500;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1, .h1 {
+  @include fluid-text(72, 32);
+
+  line-height: 120%;
+  letter-spacing: rem(-3);
+  font-weight: 700;
+
+  @include mobile {
+    line-height: 125%;
+    letter-spacing: rem(-1);
+  }
+}
+
+h2, .h2 {
+  @include fluid-text(56, 24);
+
+  line-height: 120%;
+  font-weight: 600;
+
+  @include mobile-above {
+    letter-spacing: rem(-2);
+  }
+
+  @include mobile {
+    line-height: 140%;
+  }
+}
+
+h4, .h4 {
+  @include fluid-text(32, 18);
+
+  line-height: 130%;
+  font-weight: 600;
+
+  @include mobile-above {
+    letter-spacing: rem(-1);
+  }
+
+  @include mobile {
+    line-height: 140%;
+  }
+}
+
+h6, .h6 {
+  @include fluid-text(18, 14);
+
+  line-height: 144%;
+  font-weight: 600;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+button, input, textarea {
+  @include reset_button;
+}
+
+a {
+  color: inherit;
+
+  @include hover {
+    color: $color-accent;
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed $color-neutral-60;
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}

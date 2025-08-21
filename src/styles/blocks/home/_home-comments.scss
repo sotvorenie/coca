@@ -1,0 +1,141 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.home-comments {
+
+  &__inner {
+    padding-top: fluid(69, 17);
+    padding-bottom: fluid(160, 80);
+    position: relative;
+  }
+
+  &__title {
+    color: $color-neutral-100;
+
+    @include mobile {
+      margin-bottom: rem(16);
+      max-width: rem(247);
+    }
+  }
+
+  &__info {
+    margin-bottom: fluid(112, 80);
+
+    @include mobile {
+      max-width: rem(229);
+    }
+  }
+
+  &__swiper {
+    width: 87%;
+    height: fluid(294, 219);
+    margin-right: 0 !important;
+    margin-left: auto;
+
+    @include mobile {
+      width: calc(100% - #{rem(32)});
+    }
+
+    &-btn-bar {
+      z-index: 1;
+      right: 0;
+      bottom: 0;
+      column-gap: fluid(16, 8);
+      margin-bottom: rem(3);
+
+      @include mobile {
+        margin-bottom: rem(11);
+      }
+
+      button {
+        @include square(50);
+        @include flex-center();
+
+        border-radius: 50%;
+
+        &:not(.active) {
+          border: $border-grey-40;
+          background: transparent;
+          color: $color-neutral-40;
+          pointer-events: none;
+        }
+
+        &.active {
+          background: $color-neutral-100;
+          color: $color-neutral-10;
+
+          @include hover {
+            filter: brightness(2);
+          }
+        }
+
+        @include mobile {
+          @include square(28);
+        }
+      }
+    }
+  }
+
+  &__stars {
+    column-gap: rem(8);
+    margin-bottom: fluid(16, 13);
+
+    i {
+      @include square(20);
+
+      svg {
+        width: 100%;
+      }
+    }
+
+    span {
+      @include fluid-text(16, 14);
+
+      color: $color-neutral-100;
+    }
+  }
+
+  &__comment {
+    //margin-bottom: fluid(40, 8);
+    color: $color-neutral-100;
+  }
+
+  &__person {
+    column-gap: fluid(24, 12);
+
+    &-info {
+      h6 {
+        color: $color-neutral-100;
+        margin-bottom: rem(4);
+      }
+
+      p {
+        @include fluid-text(16, 12);
+      }
+    }
+  }
+
+  &__img-container {
+    @include square(56);
+
+    border-radius: 50%;
+
+    @include mobile {
+      @include square(40);
+    }
+  }
+
+  &__absolute {
+    top: 17vw;
+    left: $container-padding-x;
+    width: fluid(115, 32);
+
+    svg {
+      width: 100%;
+    }
+
+    @include mobile {
+      top: rem(195);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.line {
+  height: 1px;
+  width: fluid(76, 24);
+  background: $color-dark;
+}
