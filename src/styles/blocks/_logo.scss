@@ -1,0 +1,6 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.logo {
+  width: fluid(140, 112);
+}

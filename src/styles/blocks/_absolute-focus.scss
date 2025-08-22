@@ -1,0 +1,12 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.absolute-focus {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  filter: brightness(.5);
+  z-index: 1000;
+  transition-duration: $transition-duration;
+  transform-origin: top right;
+}

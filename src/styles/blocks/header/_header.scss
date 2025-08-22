@@ -14,10 +14,6 @@
     }
   }
 
-  &__logo {
-    width: fluid(140, 112);
-  }
-
   &__right {
     column-gap: fluid(68, 18);
   }
@@ -41,6 +37,7 @@
     &__list {
       column-gap: fluid(32, 16);
       margin: 0;
+      row-gap: rem(18);
     }
 
     &__link {

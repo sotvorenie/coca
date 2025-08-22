@@ -3,4 +3,19 @@
 
 .header-burger {
 
+  &__content {
+    top: 0;
+    right: 0;
+    background: $color-neutral-10;
+    padding: rem(40) rem(80) rem(40) rem(40);
+    max-width: rem(300);
+    transition-duration: $transition-duration;
+    z-index: 1001;
+  }
+
+  &__close {
+    @include square(16);
+
+    right: $container-padding-x;
+  }
 }

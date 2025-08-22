@@ -2,6 +2,19 @@
 @use 'variables' as *;
 
 html {
+  &:not(.is-lock) {
+    .absolute-focus {
+      transform: scale(0);
+      opacity: 0;
+      border-radius: 100%;
+      aspect-ratio: 1;
+    }
+
+    .header-burger__content {
+      right: rem(-300);
+    }
+  }
+
   &.is-lock {
     overflow: hidden;
   }
@@ -64,6 +77,17 @@ h4, .h4 {
   }
 }
 
+h5, .h5 {
+  @include fluid-text(24, 16);
+
+  line-height: 140%;
+  font-weight: 600;
+
+  @include mobile {
+    line-height: 150%;
+  }
+}
+
 h6, .h6 {
   @include fluid-text(18, 14);
 
@@ -89,7 +113,7 @@ a {
   color: inherit;
 
   @include hover {
-    color: $color-accent;
+    color: $color-accent !important;
   }
 
   &[class] {
