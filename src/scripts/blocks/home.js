@@ -3,12 +3,14 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import changeController from "@scripts/composables/swiperController.js";
+
 document.addEventListener('DOMContentLoaded', () => {
     // переменные //
     //переключатель для слайдера news
     const newsSliderControllerElement = document.querySelector('.home-news__swiper-btn-bar');
 
-    //переключатели для слацйдера comments
+    //переключатели для слайдера comments
     const commentsSliderControllerPrevElement = document.querySelector('.home-comments-prev');
     const commentsSliderControllerNextElement = document.querySelector('.home-comments-next');
 
@@ -43,23 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // основной код //
-    //обработчик события нажатия на контроллер для слайдера news
-    function changeNewsSwiper (e) {
-        const rect = newsSliderControllerElement.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        const halfWidth = rect.width / 2;
-
-        // Определяем половину круга
-        if (clickX < halfWidth) {
-            // Левая половина - предыдущий слайд
-            newsSwiper.slidePrev();
-        } else {
-            // Правая половина - следующий слайд
-            newsSwiper.slideNext();
-        }
-    }
-
-    newsSliderControllerElement.addEventListener('click', (e) => changeNewsSwiper(e))
+    //переключение слайдов в слайдере news
+    newsSliderControllerElement.addEventListener('click', (e) => {
+        changeController(e, newsSliderControllerElement, newsSwiper);
+    })
 
     //проверка для слайдера comments:
     // если нет слайдеров для прокрутки вообще - обе кнопки неактивны

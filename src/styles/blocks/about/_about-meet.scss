@@ -1,0 +1,97 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.about-meet {
+
+  &__inner {
+    padding-top: fluid(160, 56);
+    padding-bottom: fluid(100, 56);
+  }
+
+  &__title {
+    margin-bottom: fluid(24, 16);
+  }
+
+  &__text {
+    margin-bottom: fluid(80, 32);
+  }
+
+  @include mobile-above {
+    &__title {
+      max-width: rem(903);
+    }
+
+    &__text {
+      max-width: rem(534);
+    }
+  }
+
+  &__swiper {
+
+    @include mobile {
+      width: calc(100vw - $container-padding-x);
+      padding-right: $container-padding-x !important;
+    }
+
+    &-btn-bar {
+      top: 34%;
+      left: 33%;
+
+      @include mobile {
+        //left: auto;
+        left: calc(100% / 1.45);
+      }
+    }
+  }
+
+  &__img-container {
+    width: 100%;
+    aspect-ratio: 379/434;
+    margin-bottom: fluid(16, 8);
+
+    @include mobile {
+      aspect-ratio: 247/244;
+
+      img {
+        object-position: top center;
+      }
+    }
+  }
+
+  &__info {
+    margin-bottom: fluid(8, 4);
+  }
+
+  &__list {
+    column-gap: rem(8);
+  }
+
+  &__link {
+    @include square(32);
+    @include flex-center();
+
+    color: $color-neutral-90;
+    background: #161A3410;
+    border-radius: 50%;
+
+    svg {
+      width: 50%;
+    }
+
+    @include mobile {
+      @include square(20);
+    }
+  }
+
+  &__blue {
+    z-index: -1;
+    top: rem(-200);
+    right: 0;
+
+    @include mobile {
+      width: 80%;
+      top: 0;
+      right: calc($container-padding-x * -1 - #{rem(60)});
+    }
+  }
+}

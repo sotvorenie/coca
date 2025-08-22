@@ -1,0 +1,52 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.about-banner {
+
+  &__inner {
+    padding-top: fluid(105, 32);
+    padding-bottom: fluid(135, 69);
+  }
+
+  &__title {
+    margin-bottom: fluid(118, 48);
+
+    @include mobile-above {
+      max-width: rem(959);
+    }
+  }
+
+  &__text {
+    column-gap: rem(30);
+  }
+
+  &__left {
+    column-gap: fluid(24, 8);
+
+    .line {
+      margin-top: rem(10);
+
+      @include mobile {
+        margin-top: rem(13);
+      }
+    }
+
+    h4 {
+      @include mobile-above {
+        max-width: rem(738);
+      }
+    }
+  }
+
+  &__svg {
+    @include square(162);
+
+    @include mobile {
+      @include square(69);
+
+      position: absolute;
+      right: $container-padding-x;
+      bottom: rem(8);
+    }
+  }
+}

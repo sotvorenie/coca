@@ -1,0 +1,32 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.swiper-arrows {
+  @include abs-x;
+  @include flex-center();
+
+  background: $color-neutral-10;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+
+  svg {
+    width: rem(40);
+  }
+
+  &:not(.swiper-arrows-big) {
+    @include square(80);
+
+    @include mobile {
+      @include square(40);
+
+      svg {
+        width: rem(24);
+      }
+    }
+  }
+
+  &-big {
+    @include square(100);
+  }
+}

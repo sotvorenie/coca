@@ -1,0 +1,31 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.about-join {
+
+  &__inner {
+    padding-bottom: fluid(160, 80);
+    gap: fluid(30, 16);
+  }
+
+  @include mobile-above {
+    &__title {
+      max-width: rem(626);
+    }
+
+    &__text {
+      max-width: rem(506);
+    }
+  }
+
+  &__text {
+    margin-bottom: fluid(24, 16);
+  }
+
+  &__link {
+    @include fluid-text(16, 14);
+
+    column-gap: rem(4);
+    width: fit-content;
+  }
+}

@@ -55,3 +55,20 @@
     }
   }
 }
+
+.dark-text {
+  color: $color-neutral-100;
+}
+
+.i-svg {
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.swiper-right-no-padding {
+  width: calc(100vw - $container-padding-x);
+  padding-right: $container-padding-x !important;
+}

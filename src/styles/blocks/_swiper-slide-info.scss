@@ -1,0 +1,6 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.swiper-slide-info {
+  row-gap: fluid(16, 8);
+}

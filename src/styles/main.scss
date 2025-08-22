@@ -12,6 +12,9 @@
 @use 'blocks/orange-shadow';
 @use 'blocks/title';
 @use 'blocks/absolute-focus';
+@use 'blocks/sponsors';
+@use 'blocks/swiper-arrows';
+@use 'blocks/swiper-slide-info';
 
 @use 'blocks/header/header';
 @use 'blocks/header/header-burger';
@@ -26,3 +29,9 @@
 @use 'blocks/home/home-optimize';
 @use 'blocks/home/home-news';
 @use 'blocks/home/home-comments';
+
+@use 'blocks/about/about-banner';
+@use 'blocks/about/about-details';
+@use 'blocks/about/about-ideas';
+@use 'blocks/about/about-meet';
+@use 'blocks/about/about-join';

@@ -1,0 +1,21 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.about-ideas {
+
+  &__inner {
+    padding-block: fluid(80, 24);
+    border-bottom: $border-grey-30;
+    gap: fluid(30, 16);
+  }
+
+  @include mobile-above {
+    &__title {
+      max-width: rem(480);
+    }
+
+    &__text {
+      max-width: rem(522);
+    }
+  }
+}
