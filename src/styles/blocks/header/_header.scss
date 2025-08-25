@@ -62,8 +62,15 @@
     position: relative;
     color: $color-dark;
 
-    &::after {
-      transform: scaleX(1) !important;
+    &:not(.there) {
+      &::after {
+        transform: scaleX(1) !important;
+      }
+    }
+
+    &.there {
+      pointer-events: none;
+      color: $color-accent;
     }
   }
 }

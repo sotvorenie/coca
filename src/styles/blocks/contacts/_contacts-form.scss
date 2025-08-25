@@ -1,0 +1,131 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.contacts-form {
+
+  &__inner {
+    padding-top: fluid(120, 56);
+    padding-bottom: fluid(261, 80);
+  }
+
+  &__img {
+    width: 65%;
+    top: rem(120);
+    right: 0;
+    z-index: -1;
+  }
+
+  form {
+    padding: fluid(56, 24) fluid(48, 24);
+    background: $color-neutral-10;
+    border: $border-grey-40;
+
+    @include mobile-above {
+      width: fit-content;
+    }
+
+    input, textarea {
+      color: $color-neutral-60;
+      border: $border-grey-30;
+      padding: rem(10) rem(14);
+      border-radius: $radius-small;
+      font-size: rem(14);
+      font-weight: 400;
+
+      &[placeholder] {
+        color: $color-neutral-60;
+      }
+    }
+
+    input {
+      height: rem(44);
+    }
+
+    textarea {
+      max-width: rem(512);
+      height: rem(134);
+      resize: none;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(6);
+
+      span {
+        font-size: rem(14);
+        color: $color-neutral-100;
+      }
+    }
+  }
+
+  &__title {
+    @include fluid-text(36, 18);
+
+    margin-bottom: fluid(20, 12);
+  }
+
+  &__text {
+    margin-bottom: fluid(48, 24);
+    column-gap: rem(5);
+
+    a {
+      text-decoration: none;
+      color: $color-accent;
+    }
+  }
+
+  &__fio, &__info > label:not(:last-child) {
+    margin-bottom: rem(24);
+  }
+
+  &__fio {
+    gap: rem(32);
+
+    @include mobile-above {
+      max-width: rem(512);
+
+      label {
+        width: 50%;
+      }
+    }
+  }
+
+  &__info {
+    margin-bottom: rem(32);
+
+    @include mobile-above {
+      input {
+        max-width: rem(512);
+      }
+    }
+  }
+
+  &__phone {
+
+    &-country {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      bottom: 0;
+      left: 0;
+      height: rem(44);
+      width: rem(58);
+      padding-inline: rem(12);
+      font-size: rem(14);
+      color: $color-neutral-70;
+    }
+
+    input {
+      padding-left: rem(70) !important;
+    }
+  }
+
+  &__btn {
+    padding-inline: fluid(32, 24);
+  }
+}

@@ -12472,8 +12472,12 @@ a[class] {
   position: relative;
   color: #000000;
 }
-.header__contact::after {
+.header__contact:not(.there)::after {
   transform: scaleX(1) !important;
+}
+.header__contact.there {
+  pointer-events: none;
+  color: #1463FF;
 }
 
 .header-burger__content {
@@ -13562,6 +13566,168 @@ a[class] {
 }
 .pricing-accordion__content {
   max-width: clamp(19.375rem, -4.20198737rem + 49.1827637444vw, 40.0625rem);
+}
+
+.contacts-map__inner {
+  padding-top: clamp(2.125rem, -1.8638558692rem + 8.3209509658vw, 5.625rem);
+  padding-bottom: clamp(3.5rem, 1.4343424963rem + 4.309063893vw, 5.3125rem);
+}
+.contacts-map__title {
+  margin-bottom: clamp(2.0625rem, -1.4277488856rem + 7.2808320951vw, 5.125rem);
+}
+@media (width > 47.99875rem) {
+  .contacts-map__title {
+    max-width: 46.3125rem;
+  }
+}
+.contacts-map__content {
+  gap: clamp(3.6875rem, 1.9067607727rem + 3.7147102526vw, 5.25rem);
+}
+.contacts-map__img {
+  width: 82.25%;
+}
+@media (width <= 47.99875rem) {
+  .contacts-map__img {
+    width: 100%;
+  }
+}
+.contacts-map__list {
+  padding: 0;
+}
+@media (width <= 47.99875rem) {
+  .contacts-map__list {
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+  }
+}
+@media (width > 47.99875rem) {
+  .contacts-map__item {
+    border-bottom: 1px solid #AFB3BB;
+  }
+  .contacts-map__item:first-child {
+    padding-bottom: 0.875rem;
+  }
+  .contacts-map__item:not(:first-child) {
+    padding-bottom: 2rem;
+  }
+  .contacts-map__item:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}
+.contacts-map__name {
+  margin-bottom: 0.5rem;
+}
+.contacts-map__text, .contacts-map__link {
+  font-size: clamp(0.875rem, 0.7325408618rem + 0.2971768202vw, 1rem);
+}
+.contacts-map__text {
+  margin-bottom: clamp(0.75rem, 0.1801634473rem + 1.1887072808vw, 1.25rem);
+}
+
+.contacts-form__inner {
+  padding-top: clamp(3.5rem, -1.058692422rem + 9.5096582467vw, 7.5rem);
+  padding-bottom: clamp(5rem, -7.8925520059rem + 26.8945022288vw, 16.3125rem);
+}
+.contacts-form__img {
+  width: 65%;
+  top: 7.5rem;
+  right: 0;
+  z-index: -1;
+}
+.contacts-form form {
+  padding: clamp(1.5rem, -0.779346211rem + 4.7548291233vw, 3.5rem) clamp(1.5rem, -0.2095096582rem + 3.5661218425vw, 3rem);
+  background: #FFFFFF;
+  border: 1px solid #CED1D8;
+}
+@media (width > 47.99875rem) {
+  .contacts-form form {
+    width: fit-content;
+  }
+}
+.contacts-form form input, .contacts-form form textarea {
+  color: #7E8492;
+  border: 1px solid #EDEDED;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.contacts-form form input[placeholder], .contacts-form form textarea[placeholder] {
+  color: #7E8492;
+}
+.contacts-form form input {
+  height: 2.75rem;
+}
+.contacts-form form textarea {
+  max-width: 32rem;
+  height: 8.375rem;
+  resize: none;
+}
+@media (width <= 47.99875rem) {
+  .contacts-form form textarea {
+    width: 100%;
+  }
+}
+.contacts-form form label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.375rem;
+}
+.contacts-form form label span {
+  font-size: 0.875rem;
+  color: #1D1E25;
+}
+.contacts-form__title {
+  font-size: clamp(1.125rem, -0.1571322437rem + 2.6745913819vw, 2.25rem);
+  margin-bottom: clamp(0.75rem, 0.1801634473rem + 1.1887072808vw, 1.25rem);
+}
+.contacts-form__text {
+  margin-bottom: clamp(1.5rem, -0.2095096582rem + 3.5661218425vw, 3rem);
+  column-gap: 0.3125rem;
+}
+.contacts-form__text a {
+  text-decoration: none;
+  color: #1463FF;
+}
+.contacts-form__fio, .contacts-form__info > label:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.contacts-form__fio {
+  gap: 2rem;
+}
+@media (width > 47.99875rem) {
+  .contacts-form__fio {
+    max-width: 32rem;
+  }
+  .contacts-form__fio label {
+    width: 50%;
+  }
+}
+.contacts-form__info {
+  margin-bottom: 2rem;
+}
+@media (width > 47.99875rem) {
+  .contacts-form__info input {
+    max-width: 32rem;
+  }
+}
+.contacts-form__phone-country {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  height: 2.75rem;
+  width: 3.625rem;
+  padding-inline: 0.75rem;
+  font-size: 0.875rem;
+  color: #606060;
+}
+.contacts-form__phone input {
+  padding-left: 4.375rem !important;
+}
+.contacts-form__btn {
+  padding-inline: clamp(1.5rem, 0.9301634473rem + 1.1887072808vw, 2rem);
 }
 
 /*# sourceMappingURL=main.css.map */
