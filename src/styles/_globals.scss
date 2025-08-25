@@ -63,6 +63,17 @@ h2, .h2 {
   }
 }
 
+h3, .h3 {
+  @include fluid-text(40, 18);
+
+  line-height: 120%;
+  font-weight: 600;
+
+  @include mobile {
+    line-height: 140%;
+  }
+}
+
 h4, .h4 {
   @include fluid-text(32, 18);
 

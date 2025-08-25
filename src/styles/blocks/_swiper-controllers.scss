@@ -1,0 +1,34 @@
+@use '../helpers/index' as *;
+@use '../variables' as *;
+
+.swiper-controllers {
+  z-index: 1;
+  column-gap: fluid(16, 8);
+
+  button {
+    @include square(50);
+    @include flex-center();
+
+    border-radius: 50%;
+
+    &:not(.active) {
+      border: $border-grey-40;
+      background: transparent;
+      color: $color-neutral-40;
+      pointer-events: none;
+    }
+
+    &.active {
+      background: $color-neutral-100;
+      color: $color-neutral-10;
+
+      @include hover {
+        filter: brightness(2);
+      }
+    }
+
+    @include mobile {
+      @include square(28);
+    }
+  }
+}

@@ -1,10 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/blocks/blog.js"></script>
 </head>
 <body>
+
+    <div class="absolute-focus"></div>
+
+    <header class="header">
+        <div class="header__inner container d-flex justify-content-between align-items-center">
+            <a href="/" class="header__logo logo">
+                <svg width="140" height="66" viewBox="0 0 140 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M68.1455 35.9848L72.722 38.3558C71.7651 39.6044 70.5655 40.6072 69.1232 41.3643C67.6809 42.1214 66.1069 42.5 64.4011 42.5C62.4873 42.5 60.7399 42.0285 59.159 41.0854C57.5919 40.1423 56.3368 38.8805 55.3937 37.2998C54.4646 35.7059 54 33.9459 54 32.0199C54 30.5588 54.2704 29.1973 54.8113 27.9355C55.3521 26.6603 56.0941 25.5446 57.0371 24.5882C57.994 23.6186 59.1035 22.8615 60.3655 22.3169C61.6275 21.7723 62.9727 21.5 64.4011 21.5C66.1069 21.5 67.6809 21.8786 69.1232 22.6357C70.5655 23.3928 71.7651 24.4089 72.722 25.6841L68.1455 28.0351C67.6601 27.5038 67.0846 27.092 66.4189 26.7998C65.7671 26.5076 65.0945 26.3615 64.4011 26.3615C63.4026 26.3615 62.5012 26.6271 61.6968 27.1584C60.8925 27.6765 60.2545 28.3672 59.783 29.2305C59.3115 30.0806 59.0757 31.0104 59.0757 32.0199C59.0757 33.0161 59.3115 33.9459 59.783 34.8093C60.2545 35.6594 60.8925 36.3435 61.6968 36.8615C62.5012 37.3795 63.4026 37.6385 64.4011 37.6385C65.1223 37.6385 65.8087 37.4924 66.4605 37.2002C67.1123 36.8947 67.674 36.4896 68.1455 35.9848Z" fill="#101010"/>
+                    <path d="M84.9596 42.5C83.0458 42.5 81.2984 42.0285 79.7174 41.0854C78.1503 40.1423 76.8952 38.8805 75.9522 37.2998C75.023 35.7059 74.5585 33.9459 74.5585 32.0199C74.5585 30.5588 74.8289 29.1973 75.3697 27.9355C75.9106 26.6603 76.6525 25.5446 77.5956 24.5882C78.5525 23.6186 79.6619 22.8615 80.9239 22.3169C82.1859 21.7723 83.5312 21.5 84.9596 21.5C86.8734 21.5 88.6138 21.9715 90.1809 22.9146C91.7619 23.8577 93.017 25.1262 93.9461 26.7201C94.8892 28.314 95.3607 30.0806 95.3607 32.0199C95.3607 33.4677 95.0903 34.8226 94.5494 36.0844C94.0085 37.3463 93.2597 38.4621 92.3028 39.4317C91.3597 40.388 90.2572 41.1385 88.9952 41.6831C87.7471 42.2277 86.4019 42.5 84.9596 42.5ZM84.9596 37.6385C85.9719 37.6385 86.8803 37.3795 87.6847 36.8615C88.489 36.3435 89.12 35.6594 89.5777 34.8093C90.0492 33.9592 90.2849 33.0294 90.2849 32.0199C90.2849 30.9839 90.0422 30.0408 89.5569 29.1907C89.0853 28.3273 88.4405 27.6433 87.6223 27.1385C86.8179 26.6205 85.9303 26.3615 84.9596 26.3615C83.9611 26.3615 83.0596 26.6205 82.2553 27.1385C81.4509 27.6565 80.813 28.3472 80.3415 29.2106C79.87 30.074 79.6342 31.0104 79.6342 32.0199C79.6342 33.0693 79.8769 34.019 80.3623 34.8691C80.8477 35.7192 81.4925 36.3966 82.2969 36.9013C83.1151 37.3928 84.0027 37.6385 84.9596 37.6385Z" fill="#101010"/>
+                    <path d="M111.578 35.9848L116.155 38.3558C115.198 39.6044 113.998 40.6072 112.556 41.3643C111.114 42.1214 109.54 42.5 107.834 42.5C105.92 42.5 104.173 42.0285 102.592 41.0854C101.025 40.1423 99.7696 38.8805 98.8265 37.2998C97.8974 35.7059 97.4328 33.9459 97.4328 32.0199C97.4328 30.5588 97.7032 29.1973 98.2441 27.9355C98.7849 26.6603 99.5269 25.5446 100.47 24.5882C101.427 23.6186 102.536 22.8615 103.798 22.3169C105.06 21.7723 106.405 21.5 107.834 21.5C109.54 21.5 111.114 21.8786 112.556 22.6357C113.998 23.3928 115.198 24.4089 116.155 25.6841L111.578 28.0351C111.093 27.5038 110.517 27.092 109.852 26.7998C109.2 26.5076 108.527 26.3615 107.834 26.3615C106.835 26.3615 105.934 26.6271 105.13 27.1584C104.325 27.6765 103.687 28.3672 103.216 29.2305C102.744 30.0806 102.509 31.0104 102.509 32.0199C102.509 33.0161 102.744 33.9459 103.216 34.8093C103.687 35.6594 104.325 36.3435 105.13 36.8615C105.934 37.3795 106.835 37.6385 107.834 37.6385C108.555 37.6385 109.242 37.4924 109.893 37.2002C110.545 36.8947 111.107 36.4896 111.578 35.9848Z" fill="#101010"/>
+                    <path d="M134.924 22.0579H140V41.982H134.924L134.695 39.5114C134.127 40.4013 133.371 41.1252 132.428 41.6831C131.499 42.2277 130.396 42.5 129.12 42.5C127.581 42.5 126.139 42.2211 124.794 41.6632C123.448 41.1053 122.263 40.3349 121.236 39.352C120.224 38.3691 119.427 37.2334 118.844 35.945C118.276 34.6565 117.991 33.2751 117.991 31.8008C117.991 30.3795 118.262 29.0446 118.803 27.796C119.357 26.5474 120.127 25.4516 121.112 24.5085C122.096 23.5655 123.233 22.8283 124.523 22.297C125.813 21.7657 127.2 21.5 128.684 21.5C130.057 21.5 131.284 21.7922 132.366 22.3767C133.461 22.9611 134.39 23.7049 135.153 24.6082L134.924 22.0579ZM128.996 37.8178C130.077 37.8178 131.034 37.5588 131.866 37.0408C132.698 36.5228 133.35 35.8254 133.822 34.9488C134.293 34.0588 134.529 33.0825 134.529 32.0199C134.529 30.944 134.293 29.9677 133.822 29.0911C133.35 28.2011 132.691 27.4972 131.846 26.9791C131.013 26.4611 130.063 26.2021 128.996 26.2021C127.928 26.2021 126.95 26.4677 126.062 26.9991C125.189 27.5171 124.488 28.2144 123.961 29.0911C123.448 29.9677 123.192 30.944 123.192 32.0199C123.192 33.0958 123.455 34.0721 123.982 34.9488C124.509 35.8254 125.21 36.5228 126.083 37.0408C126.971 37.5588 127.942 37.8178 128.996 37.8178Z" fill="#101010"/>
+                    <circle cx="21" cy="30.5" r="21" fill="#101010"/>
+                    <path d="M27.4483 35.4412L32 37.741C30.8906 39.1831 29.4794 40.3368 27.7664 41.2021C26.0697 42.0674 24.2262 42.5 22.2358 42.5C19.9844 42.5 17.9288 41.9611 16.069 40.8833C14.2254 39.8055 12.749 38.3634 11.6396 36.5569C10.5465 34.7353 10 32.7239 10 30.5228C10 28.8529 10.3181 27.297 10.9544 25.8548C11.5907 24.3975 12.4635 23.1224 13.5729 22.0294C14.6986 20.9213 16.0037 20.056 17.4883 19.4336C18.9729 18.8112 20.5554 18.5 22.2358 18.5C24.2262 18.5 26.0697 18.9326 27.7664 19.7979C29.4794 20.6632 30.8906 21.8245 32 23.2818L27.4483 25.5816C26.7631 24.8226 25.9637 24.2457 25.0501 23.851C24.1364 23.4412 23.1984 23.2362 22.2358 23.2362C20.898 23.2362 19.6826 23.5778 18.5895 24.2609C17.5128 24.9288 16.6563 25.8169 16.02 26.925C15.4001 28.018 15.0901 29.2173 15.0901 30.5228C15.0901 31.8131 15.4082 33.0123 16.0445 34.1205C16.6808 35.2135 17.5373 36.0939 18.614 36.7619C19.7071 37.4298 20.9143 37.7638 22.2358 37.7638C23.2473 37.7638 24.2099 37.5512 25.1235 37.1262C26.0371 36.7011 26.812 36.1395 27.4483 35.4412Z" fill="white"/>
+                </svg>
+            </a>
+
+            <div class="header__right hidden-mobile d-flex align-items-center">
+                <nav class="header_nav">
+                    <ul class="header_nav__list d-flex">
+                        <li class="header_nav__item">
+                            <a href="/" class="header_nav__link">Home</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/about.html" class="header_nav__link">About</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/blog.html" class="header_nav__link there">Blog</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/pricing.html" class="header_nav__link">Pricing</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="/contact.html" class="header__contact fw-semibold text-nowrap">Contact Us -></a>
+            </div>
+
+            <button class="header-burger visible-mobile" type="button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 5.99999C3.59961 5.33725 4.13687 4.79999 4.79961 4.79999H19.1996C19.8624 4.79999 20.3996 5.33725 20.3996 5.99999C20.3996 6.66273 19.8624 7.19999 19.1996 7.19999H4.79961C4.13687 7.19999 3.59961 6.66273 3.59961 5.99999Z" fill="#101010"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 12C3.59961 11.3372 4.13687 10.8 4.79961 10.8H19.1996C19.8624 10.8 20.3996 11.3372 20.3996 12C20.3996 12.6627 19.8624 13.2 19.1996 13.2H4.79961C4.13687 13.2 3.59961 12.6627 3.59961 12Z" fill="#101010"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7996 18C10.7996 17.3372 11.3369 16.8 11.9996 16.8H19.1996C19.8624 16.8 20.3996 17.3372 20.3996 18C20.3996 18.6627 19.8624 19.2 19.1996 19.2H11.9996C11.3369 19.2 10.7996 18.6627 10.7996 18Z" fill="#101010"/>
+                </svg>
+            </button>
+
+            <div class="header-burger__content visible-mobile position-absolute">
+                <button class="header-burger__close recolor-svg position-absolute" type="button">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 94.926 94.926" style="enable-background:new 0 0 94.926 94.926;" xml:space="preserve"><g><path d="M55.931,47.463L94.306,9.09c0.826-0.827,0.826-2.167,0-2.994L88.833,0.62C88.436,0.224,87.896,0,87.335,0 c-0.562,0-1.101,0.224-1.498,0.62L47.463,38.994L9.089,0.62c-0.795-0.795-2.202-0.794-2.995,0L0.622,6.096 c-0.827,0.827-0.827,2.167,0,2.994l38.374,38.373L0.622,85.836c-0.827,0.827-0.827,2.167,0,2.994l5.473,5.476 c0.397,0.396,0.936,0.62,1.498,0.62s1.1-0.224,1.497-0.62l38.374-38.374l38.374,38.374c0.397,0.396,0.937,0.62,1.498,0.62 s1.101-0.224,1.498-0.62l5.473-5.476c0.826-0.827,0.826-2.167,0-2.994L55.931,47.463z"></path></g></svg>
+                </button>
+
+                <nav class="header_nav mb-4">
+                    <ul class="header_nav__list d-flex flex-column">
+                        <li class="header_nav__item">
+                            <a href="/" class="header_nav__link">Home</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/about.html" class="header_nav__link">About</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/blog.html" class="header_nav__link there">Blog</a>
+                        </li>
+                        <li class="header_nav__item">
+                            <a href="/pricing.html" class="header_nav__link">Pricing</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="/contact.html" class="header__contact fw-semibold text-nowrap">Contact Us -></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main blog">
+        <section class="blog-banner">
+            <div class="blog-banner__inner container">
+                <h1 class="blog-banner__title dark-text">Activity & Updates</h1>
+
+                <div class="blog-banner__text d-flex">
+                    <div class="line"></div>
+                    <h4 class="dark-text">Our biggest challenge is making sure we're always designing and building products that will help you run your business better.</h4>
+                </div>
+
+                <div class="blog-banner__tabs swiper-right-no-padding swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <button class="blog-banner__btn is-active" type="button">View All</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button class="blog-banner__btn" type="button">Design</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button class="blog-banner__btn" type="button">Articles</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button class="blog-banner__btn" type="button">Product</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button class="blog-banner__btn" type="button">Software Development</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <button class="blog-banner__btn" type="button">Customer Success</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-banner__swiper swiper-right-no-padding swiper">
+                    <div class="swiper-wrapper">
+                        <div class="blog-banner__slide swiper-slide">
+                            <div class="blog-banner__swiper-slide swiper-slide-info swiper-slide d-flex flex-column">
+                                <div class="blog-banner__img-container img-container">
+                                    <img src="assets/images/blog/banner-1.png" height="1181" width="1769" alt="Blog"/>
+                                </div>
+
+                                <div class="blog-banner__about hidden-mobile d-flex align-items-center justify-content-between">
+                                    <p>Published in Insight Jan 30, 2021</p>
+                                    <p style="display: none">by : Albert Sans</p>
+                                </div>
+
+                                <h4 class="dark-text">Practice making User Flow</h4>
+
+                                <p class="blog-banner__info">In this article, we'll cover how to create user flows</p>
+                            </div>
+                        </div>
+                        <div class="blog-banner__slide swiper-slide">
+                            <div class="blog-banner__swiper-slide swiper-slide-info swiper-slide d-flex flex-column">
+                                <div class="blog-banner__img-container img-container">
+                                    <img src="assets/images/blog/banner-2.png" height="1181" width="1769" alt="Blog"/>
+                                </div>
+
+                                <div class="blog-banner__about hidden-mobile d-flex align-items-center justify-content-between">
+                                    <p>Published in Insight Jan 30, 2021</p>
+                                    <p>by : Albert Sans</p>
+                                </div>
+
+                                <h4 class="dark-text">Overview of the Design Principles</h4>
+
+                                <p class="blog-banner__info">What are Design Principles?… To understand design principles, we first discuss the principles. </p>
+                            </div>
+                        </div>
+                        <div class="blog-banner__slide swiper-slide">
+                            <div class="blog-banner__swiper-slide swiper-slide-info swiper-slide d-flex flex-column">
+                                <div class="blog-banner__img-container img-container">
+                                    <img src="assets/images/blog/banner-3.png" height="1181" width="1769" alt="Blog"/>
+                                </div>
+
+                                <div class="blog-banner__about hidden-mobile d-flex align-items-center justify-content-between">
+                                    <p>Published in Insight Jan 30, 2021</p>
+                                    <p style="display: none">by : Albert Sans</p>
+                                </div>
+
+                                <h4 class="dark-text">Using Grid in website design</h4>
+
+                                <p class="blog-banner__info">Andi: "What's the grid like?" Toni: “Like below…”</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-banner__swiper-btn-bar swiper-arrows swiper-arrows-big">
+                        <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.9998 2.3335L25.6665 9.00016L18.9998 15.6668M8.99984 15.6668L2.33317 9.00016L8.99984 2.3335" stroke="#7E8492" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-gallery">
+            <div class="blog-gallery__inner container">
+                <div class="blog-gallery__pc hidden-mobile row">
+                    <div class="blog-gallery__left col">
+                        <div class="blog-gallery__item d-flex flex-column">
+                            <div class="blog-gallery__img-container img-container">
+                                <img src="assets/images/blog/gallery-1.png" height="2455" width="1964" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <a href="">
+                                <h3 class="blog-gallery__title">How we perform long-running tasks using AWS services</h3>
+                            </a>
+
+                            <p class="blog-gallery__text">Webflow is web design tool as well as a hosting platform and CMS all in one. While you are probably familiar with all of these, they are usually entirely separate tools.</p>
+                        </div>
+                        <div class="blog-gallery__item small d-flex flex-column">
+                            <div class="blog-gallery__img-container img-container">
+                                <img src="assets/images/blog/gallery-2.png" height="2455" width="1964" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <a href="">
+                                <h3 class="blog-gallery__title">Layout Exploration — Simple exercise but big effect</h3>
+                            </a>
+
+                            <p class="blog-gallery__text">Make alternatives or other options for the design we are making.
+                                For example, we are creating a website design. Then there is the testimonial section.</p>
+                        </div>
+                    </div>
+                    <div class="blog-gallery__right col">
+                        <div class="blog-gallery__item small d-flex flex-column">
+                            <div class="blog-gallery__img-container img-container">
+                                <img src="assets/images/blog/gallery-3.png" height="2455" width="1964" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <a href="">
+                                <h3 class="blog-gallery__title">How to ask when doing User Research</h3>
+                            </a>
+
+                            <p class="blog-gallery__text">Bro, the story is that you want to make an application for buying and selling goods on the market. During user research, what do you think you will ask people?</p>
+                        </div>
+                        <div class="blog-gallery__item d-flex flex-column">
+                            <div class="blog-gallery__img-container img-container">
+                                <img src="assets/images/blog/gallery-4.png" height="2455" width="1964" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <a href="">
+                                <h3 class="blog-gallery__title">Webflow Break the Coding Barrier</h3>
+                            </a>
+
+                            <p class="blog-gallery__text">Webflow is web design tool as well as a hosting platform and CMS all in one. While you are probably familiar with all of these, they are usually entirely separate tools.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-gallery__mobile visible-mobile row">
+                    <div class="blog-gallery__item d-flex flex-column">
+                        <div class="blog-gallery__img-container img-container">
+                            <img src="assets/images/blog/gallery-1.png" height="2455" width="1964" alt="Blog" loading="lazy"/>
+                        </div>
+
+                        <a href="">
+                            <h3 class="blog-gallery__title">How we perform long-running tasks using AWS services</h3>
+                        </a>
+
+                        <p class="blog-gallery__text">Webflow is web design tool as well as a hosting platform and CMS all in one. While you are probably familiar with all of these, they are usually entirely separate tools.</p>
+                    </div>
+                    <div class="blog-gallery__item small d-flex flex-column">
+                        <div class="blog-gallery__img-container img-container">
+                            <img src="assets/images/blog/gallery-3.png" height="2455" width="1964" alt="Blog" loading="lazy"/>
+                        </div>
+
+                        <a href="">
+                            <h3 class="blog-gallery__title">How to ask when doing User Research</h3>
+                        </a>
+
+                        <p class="blog-gallery__text">Bro, the story is that you want to make an application for buying and selling goods on the market. During user research, what do you think you will ask people?</p>
+                    </div>
+                    <div class="blog-gallery__item small d-flex flex-column">
+                        <div class="blog-gallery__img-container img-container">
+                            <img src="assets/images/blog/gallery-2.png" height="2455" width="1964" alt="Blog" loading="lazy"/>
+                        </div>
+
+                        <a href="">
+                            <h3 class="blog-gallery__title">Layout Exploration — Simple exercise but big effect</h3>
+                        </a>
+
+                        <p class="blog-gallery__text">Make alternatives or other options for the design we are making.
+                            For example, we are creating a website design. Then there is the testimonial section.</p>
+                    </div>
+                    <div class="blog-gallery__item d-flex flex-column">
+                        <div class="blog-gallery__img-container img-container">
+                            <img src="assets/images/blog/gallery-4.png" height="2455" width="1964" alt="Blog" loading="lazy"/>
+                        </div>
+
+                        <a href="">
+                            <h3 class="blog-gallery__title">Webflow Break the Coding Barrier</h3>
+                        </a>
+
+                        <p class="blog-gallery__text">Webflow is web design tool as well as a hosting platform and CMS all in one. While you are probably familiar with all of these, they are usually entirely separate tools.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-articles">
+            <div class="blog-articles__inner container">
+                <div class="blog-articles__header d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+                    <div>
+                        <h2 class="blog-articles__title dark-text">Articles</h2>
+                        <p class="blog-articles__text">Complex tech decoded by engineers, business trends analyzed by experts.</p>
+                    </div>
+                    <div class="blog-articles__swiper-btn-bar swiper-controllers d-flex align-items-center">
+                        <button class="blog-articles-prev" type="button"><-</button>
+                        <button class="blog-articles-next" type="button">-></button>
+                    </div>
+                </div>
+
+                <div class="blog-articles__swiper swiper-right-no-padding swiper">
+                    <div class="swiper-wrapper">
+                        <div class="blog-articles__slide swiper-slide">
+                            <div class="blog-articles__img-container img-container">
+                                <img src="assets/images/blog/articles-1.png" height="581" width="387" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <h4 class="blog-articles__name dark-text">List of UX Designer Portfolio / Case Studies where you can make money</h4>
+
+                            <p class="blog-articles__about">Here are some portfolios / Case Studies from UX Designers that you can use as a reference for creating a portfolio. Two interesting things from their portfolio are:</p>
+
+                            <button class="blog-articles__btn button button-white" type="button">Read More</button>
+                        </div>
+                        <div class="blog-articles__slide swiper-slide">
+                            <div class="blog-articles__img-container img-container">
+                                <img src="assets/images/blog/articles-2.png" height="581" width="387" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <h4 class="blog-articles__name dark-text">Skyrocketing in The Designing Career, Why Not?</h4>
+
+                            <p class="blog-articles__about">Ever thought of jumping into the world of design as a career? If not, you may want to look at what the word ‘design’ actually means. Design is a method of designing aesthetic actions that are carried out.</p>
+
+                            <button class="blog-articles__btn button button-white" type="button">Read More</button>
+                        </div>
+                        <div class="blog-articles__slide swiper-slide">
+                            <div class="blog-articles__img-container img-container">
+                                <img src="assets/images/blog/articles-3.png" height="581" width="387" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <h4 class="blog-articles__name dark-text">Elements that may be missed when designing the UI</h4>
+
+                            <p class="blog-articles__about">This is an article that talks about the little elements that are often overlooked when designing UI.</p>
+
+                            <button class="blog-articles__btn button button-white" type="button">Read More</button>
+                        </div>
+                        <div class="blog-articles__slide swiper-slide">
+                            <div class="blog-articles__img-container img-container">
+                                <img src="assets/images/blog/articles-1.png" height="581" width="387" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <h4 class="blog-articles__name dark-text">List of UX Designer Portfolio / Case Studies where you can make money</h4>
+
+                            <p class="blog-articles__about">Here are some portfolios / Case Studies from UX Designers that you can use as a reference for creating a portfolio. Two interesting things from their portfolio are:</p>
+
+                            <button class="blog-articles__btn button button-white" type="button">Read More</button>
+                        </div>
+                        <div class="blog-articles__slide swiper-slide">
+                            <div class="blog-articles__img-container img-container">
+                                <img src="assets/images/blog/articles-2.png" height="581" width="387" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <h4 class="blog-articles__name dark-text">Skyrocketing in The Designing Career, Why Not?</h4>
+
+                            <p class="blog-articles__about">Ever thought of jumping into the world of design as a career? If not, you may want to look at what the word ‘design’ actually means. Design is a method of designing aesthetic actions that are carried out.</p>
+
+                            <button class="blog-articles__btn button button-white" type="button">Read More</button>
+                        </div>
+                        <div class="blog-articles__slide swiper-slide">
+                            <div class="blog-articles__img-container img-container">
+                                <img src="assets/images/blog/articles-3.png" height="581" width="387" alt="Blog" loading="lazy"/>
+                            </div>
+
+                            <h4 class="blog-articles__name dark-text">Elements that may be missed when designing the UI</h4>
+
+                            <p class="blog-articles__about">This is an article that talks about the little elements that are often overlooked when designing UI.</p>
+
+                            <button class="blog-articles__btn button button-white" type="button">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <img class="footer__orange position-absolute" src="assets/images/footer/footer-orange-shadow.png" height="772" width="1015" loading="lazy"/>
+        <img class="footer__blue position-absolute" src="assets/images/footer/footer-blue-shadow.png" height="830" width="445" loading="lazy"/>
+
+        <div class="footer__inner container">
+            <div class="footer__header d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between">
+                <div class="footer__title">
+                    <h2 class="footer_title">Think beyond the wave</h2>
+                    <div class="footer__text d-flex">
+                        <div class="line"></div>
+                        <h5>Ask about Sans products, pricing, implementation, or anything else. Our highly trained reps are standing by, ready to help</h5>
+                    </div>
+                </div>
+
+                <button class="footer__btn button button-black" type="button">Try for free</button>
+                <button class="footer__btn button button-white" type="button">Try for free</button>
+            </div>
+
+            <div class="footer__main d-flex justify-content-between">
+                <div class="footer__logo">
+                    <i class="footer__logo-dark logo">
+                        <svg width="140" height="66" viewBox="0 0 140 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M68.1455 35.9848L72.722 38.3558C71.7651 39.6044 70.5655 40.6072 69.1232 41.3643C67.6809 42.1214 66.1069 42.5 64.4011 42.5C62.4873 42.5 60.7399 42.0285 59.159 41.0854C57.5919 40.1423 56.3368 38.8805 55.3937 37.2998C54.4646 35.7059 54 33.9459 54 32.0199C54 30.5588 54.2704 29.1973 54.8113 27.9355C55.3521 26.6603 56.0941 25.5446 57.0371 24.5882C57.994 23.6186 59.1035 22.8615 60.3655 22.3169C61.6275 21.7723 62.9727 21.5 64.4011 21.5C66.1069 21.5 67.6809 21.8786 69.1232 22.6357C70.5655 23.3928 71.7651 24.4089 72.722 25.6841L68.1455 28.0351C67.6601 27.5038 67.0846 27.092 66.4189 26.7998C65.7671 26.5076 65.0945 26.3615 64.4011 26.3615C63.4026 26.3615 62.5012 26.6271 61.6968 27.1584C60.8925 27.6765 60.2545 28.3672 59.783 29.2305C59.3115 30.0806 59.0757 31.0104 59.0757 32.0199C59.0757 33.0161 59.3115 33.9459 59.783 34.8093C60.2545 35.6594 60.8925 36.3435 61.6968 36.8615C62.5012 37.3795 63.4026 37.6385 64.4011 37.6385C65.1223 37.6385 65.8087 37.4924 66.4605 37.2002C67.1123 36.8947 67.674 36.4896 68.1455 35.9848Z" fill="#101010"/>
+                            <path d="M84.9596 42.5C83.0458 42.5 81.2984 42.0285 79.7174 41.0854C78.1503 40.1423 76.8952 38.8805 75.9522 37.2998C75.023 35.7059 74.5585 33.9459 74.5585 32.0199C74.5585 30.5588 74.8289 29.1973 75.3697 27.9355C75.9106 26.6603 76.6525 25.5446 77.5956 24.5882C78.5525 23.6186 79.6619 22.8615 80.9239 22.3169C82.1859 21.7723 83.5312 21.5 84.9596 21.5C86.8734 21.5 88.6138 21.9715 90.1809 22.9146C91.7619 23.8577 93.017 25.1262 93.9461 26.7201C94.8892 28.314 95.3607 30.0806 95.3607 32.0199C95.3607 33.4677 95.0903 34.8226 94.5494 36.0844C94.0085 37.3463 93.2597 38.4621 92.3028 39.4317C91.3597 40.388 90.2572 41.1385 88.9952 41.6831C87.7471 42.2277 86.4019 42.5 84.9596 42.5ZM84.9596 37.6385C85.9719 37.6385 86.8803 37.3795 87.6847 36.8615C88.489 36.3435 89.12 35.6594 89.5777 34.8093C90.0492 33.9592 90.2849 33.0294 90.2849 32.0199C90.2849 30.9839 90.0422 30.0408 89.5569 29.1907C89.0853 28.3273 88.4405 27.6433 87.6223 27.1385C86.8179 26.6205 85.9303 26.3615 84.9596 26.3615C83.9611 26.3615 83.0596 26.6205 82.2553 27.1385C81.4509 27.6565 80.813 28.3472 80.3415 29.2106C79.87 30.074 79.6342 31.0104 79.6342 32.0199C79.6342 33.0693 79.8769 34.019 80.3623 34.8691C80.8477 35.7192 81.4925 36.3966 82.2969 36.9013C83.1151 37.3928 84.0027 37.6385 84.9596 37.6385Z" fill="#101010"/>
+                            <path d="M111.578 35.9848L116.155 38.3558C115.198 39.6044 113.998 40.6072 112.556 41.3643C111.114 42.1214 109.54 42.5 107.834 42.5C105.92 42.5 104.173 42.0285 102.592 41.0854C101.025 40.1423 99.7696 38.8805 98.8265 37.2998C97.8974 35.7059 97.4328 33.9459 97.4328 32.0199C97.4328 30.5588 97.7032 29.1973 98.2441 27.9355C98.7849 26.6603 99.5269 25.5446 100.47 24.5882C101.427 23.6186 102.536 22.8615 103.798 22.3169C105.06 21.7723 106.405 21.5 107.834 21.5C109.54 21.5 111.114 21.8786 112.556 22.6357C113.998 23.3928 115.198 24.4089 116.155 25.6841L111.578 28.0351C111.093 27.5038 110.517 27.092 109.852 26.7998C109.2 26.5076 108.527 26.3615 107.834 26.3615C106.835 26.3615 105.934 26.6271 105.13 27.1584C104.325 27.6765 103.687 28.3672 103.216 29.2305C102.744 30.0806 102.509 31.0104 102.509 32.0199C102.509 33.0161 102.744 33.9459 103.216 34.8093C103.687 35.6594 104.325 36.3435 105.13 36.8615C105.934 37.3795 106.835 37.6385 107.834 37.6385C108.555 37.6385 109.242 37.4924 109.893 37.2002C110.545 36.8947 111.107 36.4896 111.578 35.9848Z" fill="#101010"/>
+                            <path d="M134.924 22.0579H140V41.982H134.924L134.695 39.5114C134.127 40.4013 133.371 41.1252 132.428 41.6831C131.499 42.2277 130.396 42.5 129.12 42.5C127.581 42.5 126.139 42.2211 124.794 41.6632C123.448 41.1053 122.263 40.3349 121.236 39.352C120.224 38.3691 119.427 37.2334 118.844 35.945C118.276 34.6565 117.991 33.2751 117.991 31.8008C117.991 30.3795 118.262 29.0446 118.803 27.796C119.357 26.5474 120.127 25.4516 121.112 24.5085C122.096 23.5655 123.233 22.8283 124.523 22.297C125.813 21.7657 127.2 21.5 128.684 21.5C130.057 21.5 131.284 21.7922 132.366 22.3767C133.461 22.9611 134.39 23.7049 135.153 24.6082L134.924 22.0579ZM128.996 37.8178C130.077 37.8178 131.034 37.5588 131.866 37.0408C132.698 36.5228 133.35 35.8254 133.822 34.9488C134.293 34.0588 134.529 33.0825 134.529 32.0199C134.529 30.944 134.293 29.9677 133.822 29.0911C133.35 28.2011 132.691 27.4972 131.846 26.9791C131.013 26.4611 130.063 26.2021 128.996 26.2021C127.928 26.2021 126.95 26.4677 126.062 26.9991C125.189 27.5171 124.488 28.2144 123.961 29.0911C123.448 29.9677 123.192 30.944 123.192 32.0199C123.192 33.0958 123.455 34.0721 123.982 34.9488C124.509 35.8254 125.21 36.5228 126.083 37.0408C126.971 37.5588 127.942 37.8178 128.996 37.8178Z" fill="#101010"/>
+                            <circle cx="21" cy="30.5" r="21" fill="#101010"/>
+                            <path d="M27.4483 35.4412L32 37.741C30.8906 39.1831 29.4794 40.3368 27.7664 41.2021C26.0697 42.0674 24.2262 42.5 22.2358 42.5C19.9844 42.5 17.9288 41.9611 16.069 40.8833C14.2254 39.8055 12.749 38.3634 11.6396 36.5569C10.5465 34.7353 10 32.7239 10 30.5228C10 28.8529 10.3181 27.297 10.9544 25.8548C11.5907 24.3975 12.4635 23.1224 13.5729 22.0294C14.6986 20.9213 16.0037 20.056 17.4883 19.4336C18.9729 18.8112 20.5554 18.5 22.2358 18.5C24.2262 18.5 26.0697 18.9326 27.7664 19.7979C29.4794 20.6632 30.8906 21.8245 32 23.2818L27.4483 25.5816C26.7631 24.8226 25.9637 24.2457 25.0501 23.851C24.1364 23.4412 23.1984 23.2362 22.2358 23.2362C20.898 23.2362 19.6826 23.5778 18.5895 24.2609C17.5128 24.9288 16.6563 25.8169 16.02 26.925C15.4001 28.018 15.0901 29.2173 15.0901 30.5228C15.0901 31.8131 15.4082 33.0123 16.0445 34.1205C16.6808 35.2135 17.5373 36.0939 18.614 36.7619C19.7071 37.4298 20.9143 37.7638 22.2358 37.7638C23.2473 37.7638 24.2099 37.5512 25.1235 37.1262C26.0371 36.7011 26.812 36.1395 27.4483 35.4412Z" fill="white"/>
+                        </svg>
+                    </i>
+                    <i class="footer__logo-light logo">
+                        <svg width="140" height="66" viewBox="0 0 140 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M68.1455 35.9848L72.722 38.3558C71.7651 39.6044 70.5655 40.6072 69.1232 41.3643C67.6809 42.1214 66.1069 42.5 64.4011 42.5C62.4873 42.5 60.7399 42.0285 59.159 41.0854C57.5919 40.1423 56.3368 38.8805 55.3937 37.2998C54.4646 35.7059 54 33.9459 54 32.0199C54 30.5588 54.2704 29.1973 54.8113 27.9355C55.3521 26.6603 56.0941 25.5446 57.0371 24.5882C57.994 23.6186 59.1035 22.8615 60.3655 22.3169C61.6275 21.7723 62.9727 21.5 64.4011 21.5C66.1069 21.5 67.6809 21.8786 69.1232 22.6357C70.5655 23.3928 71.7651 24.4089 72.722 25.6841L68.1455 28.0351C67.6601 27.5038 67.0846 27.092 66.4189 26.7998C65.7671 26.5076 65.0945 26.3615 64.4011 26.3615C63.4026 26.3615 62.5012 26.6271 61.6968 27.1584C60.8925 27.6765 60.2545 28.3672 59.783 29.2305C59.3115 30.0806 59.0757 31.0104 59.0757 32.0199C59.0757 33.0161 59.3115 33.9459 59.783 34.8093C60.2545 35.6594 60.8925 36.3435 61.6968 36.8615C62.5012 37.3795 63.4026 37.6385 64.4011 37.6385C65.1223 37.6385 65.8087 37.4924 66.4605 37.2002C67.1123 36.8947 67.674 36.4896 68.1455 35.9848Z" fill="white"/>
+                            <path d="M84.9596 42.5C83.0458 42.5 81.2984 42.0285 79.7174 41.0854C78.1503 40.1423 76.8952 38.8805 75.9522 37.2998C75.023 35.7059 74.5585 33.9459 74.5585 32.0199C74.5585 30.5588 74.8289 29.1973 75.3697 27.9355C75.9106 26.6603 76.6525 25.5446 77.5956 24.5882C78.5525 23.6186 79.6619 22.8615 80.9239 22.3169C82.1859 21.7723 83.5312 21.5 84.9596 21.5C86.8734 21.5 88.6138 21.9715 90.1809 22.9146C91.7619 23.8577 93.017 25.1262 93.9461 26.7201C94.8892 28.314 95.3607 30.0806 95.3607 32.0199C95.3607 33.4677 95.0903 34.8226 94.5494 36.0844C94.0085 37.3463 93.2597 38.4621 92.3028 39.4317C91.3597 40.388 90.2572 41.1385 88.9952 41.6831C87.7471 42.2277 86.4019 42.5 84.9596 42.5ZM84.9596 37.6385C85.9719 37.6385 86.8803 37.3795 87.6847 36.8615C88.489 36.3435 89.12 35.6594 89.5777 34.8093C90.0492 33.9592 90.2849 33.0294 90.2849 32.0199C90.2849 30.9839 90.0422 30.0408 89.5569 29.1907C89.0853 28.3273 88.4405 27.6433 87.6223 27.1385C86.8179 26.6205 85.9303 26.3615 84.9596 26.3615C83.9611 26.3615 83.0596 26.6205 82.2553 27.1385C81.4509 27.6565 80.813 28.3472 80.3415 29.2106C79.87 30.074 79.6342 31.0104 79.6342 32.0199C79.6342 33.0693 79.8769 34.019 80.3623 34.8691C80.8477 35.7192 81.4925 36.3966 82.2969 36.9013C83.1151 37.3928 84.0027 37.6385 84.9596 37.6385Z" fill="white"/>
+                            <path d="M111.578 35.9848L116.155 38.3558C115.198 39.6044 113.998 40.6072 112.556 41.3643C111.114 42.1214 109.54 42.5 107.834 42.5C105.92 42.5 104.173 42.0285 102.592 41.0854C101.025 40.1423 99.7696 38.8805 98.8265 37.2998C97.8974 35.7059 97.4328 33.9459 97.4328 32.0199C97.4328 30.5588 97.7032 29.1973 98.2441 27.9355C98.7849 26.6603 99.5269 25.5446 100.47 24.5882C101.427 23.6186 102.536 22.8615 103.798 22.3169C105.06 21.7723 106.405 21.5 107.834 21.5C109.54 21.5 111.114 21.8786 112.556 22.6357C113.998 23.3928 115.198 24.4089 116.155 25.6841L111.578 28.0351C111.093 27.5038 110.517 27.092 109.852 26.7998C109.2 26.5076 108.527 26.3615 107.834 26.3615C106.835 26.3615 105.934 26.6271 105.13 27.1584C104.325 27.6765 103.687 28.3672 103.216 29.2305C102.744 30.0806 102.509 31.0104 102.509 32.0199C102.509 33.0161 102.744 33.9459 103.216 34.8093C103.687 35.6594 104.325 36.3435 105.13 36.8615C105.934 37.3795 106.835 37.6385 107.834 37.6385C108.555 37.6385 109.242 37.4924 109.893 37.2002C110.545 36.8947 111.107 36.4896 111.578 35.9848Z" fill="white"/>
+                            <path d="M134.924 22.0579H140V41.982H134.924L134.695 39.5114C134.127 40.4013 133.371 41.1252 132.428 41.6831C131.499 42.2277 130.396 42.5 129.12 42.5C127.581 42.5 126.139 42.2211 124.794 41.6632C123.448 41.1053 122.263 40.3349 121.236 39.352C120.224 38.3691 119.427 37.2334 118.844 35.945C118.276 34.6565 117.991 33.2751 117.991 31.8008C117.991 30.3795 118.262 29.0446 118.803 27.796C119.357 26.5474 120.127 25.4516 121.112 24.5085C122.096 23.5655 123.233 22.8283 124.523 22.297C125.813 21.7657 127.2 21.5 128.684 21.5C130.057 21.5 131.284 21.7922 132.366 22.3767C133.461 22.9611 134.39 23.7049 135.153 24.6082L134.924 22.0579ZM128.996 37.8178C130.077 37.8178 131.034 37.5588 131.866 37.0408C132.698 36.5228 133.35 35.8254 133.822 34.9488C134.293 34.0588 134.529 33.0825 134.529 32.0199C134.529 30.944 134.293 29.9677 133.822 29.0911C133.35 28.2011 132.691 27.4972 131.846 26.9791C131.013 26.4611 130.063 26.2021 128.996 26.2021C127.928 26.2021 126.95 26.4677 126.062 26.9991C125.189 27.5171 124.488 28.2144 123.961 29.0911C123.448 29.9677 123.192 30.944 123.192 32.0199C123.192 33.0958 123.455 34.0721 123.982 34.9488C124.509 35.8254 125.21 36.5228 126.083 37.0408C126.971 37.5588 127.942 37.8178 128.996 37.8178Z" fill="white"/>
+                            <circle cx="21" cy="30.5" r="21" fill="white"/>
+                            <path d="M27.4483 35.4412L32 37.741C30.8906 39.1831 29.4794 40.3368 27.7664 41.2021C26.0697 42.0674 24.2262 42.5 22.2358 42.5C19.9844 42.5 17.9288 41.9611 16.069 40.8833C14.2254 39.8055 12.749 38.3634 11.6396 36.5569C10.5465 34.7353 10 32.7239 10 30.5228C10 28.8529 10.3181 27.297 10.9544 25.8548C11.5907 24.3975 12.4635 23.1224 13.5729 22.0294C14.6986 20.9213 16.0037 20.056 17.4883 19.4336C18.9729 18.8112 20.5554 18.5 22.2358 18.5C24.2262 18.5 26.0697 18.9326 27.7664 19.7979C29.4794 20.6632 30.8906 21.8245 32 23.2818L27.4483 25.5816C26.7631 24.8226 25.9637 24.2457 25.0501 23.851C24.1364 23.4412 23.1984 23.2362 22.2358 23.2362C20.898 23.2362 19.6826 23.5778 18.5895 24.2609C17.5128 24.9288 16.6563 25.8169 16.02 26.925C15.4001 28.018 15.0901 29.2173 15.0901 30.5228C15.0901 31.8131 15.4082 33.0123 16.0445 34.1205C16.6808 35.2135 17.5373 36.0939 18.614 36.7619C19.7071 37.4298 20.9143 37.7638 22.2358 37.7638C23.2473 37.7638 24.2099 37.5512 25.1235 37.1262C26.0371 36.7011 26.812 36.1395 27.4483 35.4412Z" fill="black"/>
+                        </svg>
+                    </i>
+                    <p>We built an elegant solution. Our team created a fully integrated sales and marketing solution for SMBs</p>
+                </div>
+
+                <nav class="footer__nav row d-flex hidden-mobile">
+                    <div class="footer__col col">
+                        <p class="footer__col-title fw-bold">Company</p>
+
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="/about">About</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/pricing">Pricing</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Jobs</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/blog">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col col">
+                        <p class="footer__col-title fw-bold">Product</p>
+
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Sales Software</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Marketplace</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Terms & Conditions</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col col">
+                        <p class="footer__col-title fw-bold">Discover</p>
+
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">CRM Comparision</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Partner Program</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">What is CRM</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Resource</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col col">
+                        <p class="footer__col-title fw-bold">Help Center</p>
+
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Community</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Knowledge Base</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Academy</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="/">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="footer__footer d-flex flex-wrap flex-column flex-md-row align-items-center">
+                <nav class="footer__soc1als d-flex flex-column flex-md-row align-items-center">
+                    <ul class="footer__soc1als-list d-flex align-items-center">
+                        <li class="footer__soc1als-item">
+                            <a class="footer__soc1als-link recolor-svg" href="/" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_270_8691)">
+                                        <path d="M20 10C20 4.47715 15.5229 0 10 0C4.47715 0 0 4.47715 0 10C0 14.9912 3.65684 19.1283 8.4375 19.8785V12.8906H5.89844V10H8.4375V7.79688C8.4375 5.29063 9.93047 3.90625 12.2146 3.90625C13.3084 3.90625 14.4531 4.10156 14.4531 4.10156V6.5625H13.1922C11.95 6.5625 11.5625 7.3334 11.5625 8.125V10H14.3359L13.8926 12.8906H11.5625V19.8785C16.3432 19.1283 20 14.9912 20 10Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_270_8691">
+                                            <rect width="20" height="20" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__soc1als-item">
+                            <a class="footer__soc1als-link recolor-svg" href="/" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.2918 18.1251C13.8371 18.1251 17.9652 11.8724 17.9652 6.45167C17.9652 6.27589 17.9613 6.0962 17.9535 5.92042C18.7566 5.33967 19.4496 4.62033 20 3.7962C19.2521 4.12896 18.458 4.34627 17.6449 4.44074C18.5011 3.92755 19.1421 3.12135 19.4492 2.17159C18.6438 2.64892 17.763 2.98563 16.8445 3.1673C16.2257 2.50976 15.4075 2.07439 14.5164 1.9285C13.6253 1.78261 12.711 1.93433 11.9148 2.3602C11.1186 2.78607 10.4848 3.46238 10.1115 4.28455C9.73825 5.10672 9.64619 6.02897 9.84961 6.9087C8.21874 6.82686 6.62328 6.40321 5.16665 5.6652C3.71002 4.9272 2.42474 3.89132 1.39414 2.62472C0.870333 3.52782 0.710047 4.59649 0.945859 5.61353C1.18167 6.63057 1.79589 7.51966 2.66367 8.10011C2.01219 8.07943 1.37498 7.90402 0.804688 7.58839V7.63917C0.804104 8.58691 1.13175 9.50561 1.73192 10.2391C2.3321 10.9726 3.16777 11.4756 4.09687 11.6626C3.49338 11.8277 2.85999 11.8518 2.2457 11.7329C2.50788 12.548 3.01798 13.2609 3.70481 13.7721C4.39164 14.2833 5.22093 14.5673 6.07695 14.5845C4.62369 15.726 2.82848 16.3452 0.980469 16.3423C0.652739 16.3418 0.325333 16.3217 0 16.2821C1.87738 17.4866 4.06128 18.1263 6.2918 18.1251Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__soc1als-item">
+                            <a class="footer__soc1als-link recolor-svg" href="/" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_270_8695)">
+                                        <path d="M10 1.80078C12.6719 1.80078 12.9883 1.8125 14.0391 1.85937C15.0156 1.90234 15.543 2.06641 15.8945 2.20313C16.3594 2.38281 16.6953 2.60156 17.043 2.94922C17.3945 3.30078 17.6094 3.63281 17.7891 4.09766C17.9258 4.44922 18.0898 4.98047 18.1328 5.95312C18.1797 7.00781 18.1914 7.32422 18.1914 9.99219C18.1914 12.6641 18.1797 12.9805 18.1328 14.0313C18.0898 15.0078 17.9258 15.5352 17.7891 15.8867C17.6094 16.3516 17.3906 16.6875 17.043 17.0352C16.6914 17.3867 16.3594 17.6016 15.8945 17.7813C15.543 17.918 15.0117 18.082 14.0391 18.125C12.9844 18.1719 12.668 18.1836 10 18.1836C7.32813 18.1836 7.01172 18.1719 5.96094 18.125C4.98438 18.082 4.45703 17.918 4.10547 17.7813C3.64063 17.6016 3.30469 17.3828 2.95703 17.0352C2.60547 16.6836 2.39063 16.3516 2.21094 15.8867C2.07422 15.5352 1.91016 15.0039 1.86719 14.0313C1.82031 12.9766 1.80859 12.6602 1.80859 9.99219C1.80859 7.32031 1.82031 7.00391 1.86719 5.95312C1.91016 4.97656 2.07422 4.44922 2.21094 4.09766C2.39063 3.63281 2.60938 3.29688 2.95703 2.94922C3.30859 2.59766 3.64063 2.38281 4.10547 2.20313C4.45703 2.06641 4.98828 1.90234 5.96094 1.85937C7.01172 1.8125 7.32813 1.80078 10 1.80078ZM10 0C7.28516 0 6.94531 0.0117187 5.87891 0.0585938C4.81641 0.105469 4.08594 0.277344 3.45313 0.523438C2.79297 0.78125 2.23438 1.12109 1.67969 1.67969C1.12109 2.23438 0.78125 2.79297 0.523438 3.44922C0.277344 4.08594 0.105469 4.8125 0.0585938 5.875C0.0117188 6.94531 0 7.28516 0 10C0 12.7148 0.0117188 13.0547 0.0585938 14.1211C0.105469 15.1836 0.277344 15.9141 0.523438 16.5469C0.78125 17.207 1.12109 17.7656 1.67969 18.3203C2.23438 18.875 2.79297 19.2188 3.44922 19.4727C4.08594 19.7188 4.8125 19.8906 5.875 19.9375C6.94141 19.9844 7.28125 19.9961 9.99609 19.9961C12.7109 19.9961 13.0508 19.9844 14.1172 19.9375C15.1797 19.8906 15.9102 19.7188 16.543 19.4727C17.1992 19.2188 17.7578 18.875 18.3125 18.3203C18.8672 17.7656 19.2109 17.207 19.4648 16.5508C19.7109 15.9141 19.8828 15.1875 19.9297 14.125C19.9766 13.0586 19.9883 12.7188 19.9883 10.0039C19.9883 7.28906 19.9766 6.94922 19.9297 5.88281C19.8828 4.82031 19.7109 4.08984 19.4648 3.45703C19.2188 2.79297 18.8789 2.23438 18.3203 1.67969C17.7656 1.125 17.207 0.78125 16.5508 0.527344C15.9141 0.28125 15.1875 0.109375 14.125 0.0625C13.0547 0.0117188 12.7148 0 10 0Z" fill="white"/>
+                                        <path d="M10 4.86328C7.16406 4.86328 4.86328 7.16406 4.86328 10C4.86328 12.8359 7.16406 15.1367 10 15.1367C12.8359 15.1367 15.1367 12.8359 15.1367 10C15.1367 7.16406 12.8359 4.86328 10 4.86328ZM10 13.332C8.16016 13.332 6.66797 11.8398 6.66797 10C6.66797 8.16016 8.16016 6.66797 10 6.66797C11.8398 6.66797 13.332 8.16016 13.332 10C13.332 11.8398 11.8398 13.332 10 13.332Z" fill="white"/>
+                                        <path d="M16.5391 4.66016C16.5391 5.32422 16 5.85938 15.3398 5.85938C14.6758 5.85938 14.1406 5.32031 14.1406 4.66016C14.1406 3.99609 14.6797 3.46094 15.3398 3.46094C16 3.46094 16.5391 4 16.5391 4.66016Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_270_8695">
+                                            <rect width="20" height="20" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__soc1als-item">
+                            <a class="footer__soc1als-link recolor-svg" href="/" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_270_8700)">
+                                        <path d="M18.5195 0H1.47656C0.660156 0 0 0.644531 0 1.44141V18.5547C0 19.3516 0.660156 20 1.47656 20H18.5195C19.3359 20 20 19.3516 20 18.5586V1.44141C20 0.644531 19.3359 0 18.5195 0ZM5.93359 17.043H2.96484V7.49609H5.93359V17.043ZM4.44922 6.19531C3.49609 6.19531 2.72656 5.42578 2.72656 4.47656C2.72656 3.52734 3.49609 2.75781 4.44922 2.75781C5.39844 2.75781 6.16797 3.52734 6.16797 4.47656C6.16797 5.42188 5.39844 6.19531 4.44922 6.19531ZM17.043 17.043H14.0781V12.4023C14.0781 11.2969 14.0586 9.87109 12.5352 9.87109C10.9922 9.87109 10.7578 11.0781 10.7578 12.3242V17.043H7.79688V7.49609H10.6406V8.80078H10.6797C11.0742 8.05078 12.043 7.25781 13.4844 7.25781C16.4883 7.25781 17.043 9.23438 17.043 11.8047V17.043Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_270_8700">
+                                            <rect width="20" height="20" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="footer__soc1als-privacy d-flex">
+                        <li class="footer__soc1als-item">
+                            <a class="footer__soc1als-link-privacy" href="">Privacy Policy</a>
+                        </li>
+                        <li class="footer__soc1als-item">
+                            <a class="footer__soc1als-link-privacy" href="">Terms & Conditions</a>
+                        </li>
+                        <li class="footer__soc1als-item">
+                            <a class="footer__soc1als-link-privacy" href="">Support</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <p class="footer__copyright">
+                    © Copyright
+                    <data value="2023">2023</data>
+                    ,t All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

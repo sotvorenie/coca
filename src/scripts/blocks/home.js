@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import changeController from "@scripts/composables/swiperController.js";
+import checkSlider from "@scripts/composables/checkSlider.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     // переменные //
@@ -58,29 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //получаем количество слайдов
     const commentsSlideNumber = commentsSwiper.slides.length;
 
-    function checkCommentSlider () {
-        //получаем активный слайд
-        const index = commentsSwiper.activeIndex + 1;
+    checkSlider(commentsSlideNumber, commentsSwiper, commentsSliderControllerPrevElement, commentsSliderControllerNextElement);
 
-        if (commentsSlideNumber === 0 || commentsSlideNumber === 1) return;
-
-        if (index === 1) {
-            commentsSliderControllerPrevElement.classList.remove('active');
-            commentsSliderControllerNextElement.classList.add('active');
-            return;
-        }
-
-        if (index === commentsSlideNumber) {
-            commentsSliderControllerPrevElement.classList.add('active');
-            commentsSliderControllerNextElement.classList.remove('active');
-            return;
-        }
-
-        commentsSliderControllerNextElement.classList.add('active');
-        commentsSliderControllerPrevElement.classList.add('active');
-    }
-
-    checkCommentSlider();
-
-    commentsSwiper.on('slideChange', checkCommentSlider)
+    commentsSwiper.on('slideChange', () => {
+        checkSlider(commentsSlideNumber, commentsSwiper, commentsSliderControllerPrevElement, commentsSliderControllerNextElement)
+    })
 });

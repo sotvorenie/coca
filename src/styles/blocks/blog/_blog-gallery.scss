@@ -1,0 +1,79 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.blog-gallery {
+  background: $color-neutral-100;
+
+  &__inner {
+    padding-block: fluid(120, 40);
+    
+    a {
+      text-decoration: none;
+      color: $color-neutral-10;
+
+      @include hover {
+        text-decoration: underline;
+        color: $color-neutral-10 !important;
+      }
+    }
+  }
+
+  &__pc {
+    column-gap: rem(32);
+  }
+
+  &__mobile {
+    row-gap: rem(40);
+  }
+
+  &__left, &__right {
+    padding: 0 !important;
+
+    & > div:not(:last-child) {
+      margin-bottom: rem(159);
+    }
+  }
+
+  &__right > div:not(:last-child) {
+    margin-bottom: rem(171);
+  }
+
+  &__item {
+    row-gap: fluid(24, 16);
+
+    &:not(.small) {
+      .blog-gallery__img-container {
+        height: rem(751);
+
+        @include mobile {
+          height: rem(430);
+        }
+      }
+    }
+
+    &.small {
+      .blog-gallery__img-container {
+        height: rem(507);
+
+        @include mobile {
+          height: rem(290);
+        }
+      }
+    }
+  }
+
+  &__title {
+
+    @include mobile {
+      margin-bottom: rem(-8);
+    }
+  }
+
+  &__text {
+
+    @include mobile-above {
+      max-width: rem(515);
+      line-height: 170%;
+    }
+  }
+}

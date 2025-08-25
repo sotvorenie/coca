@@ -1,0 +1,91 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.blog-banner {
+
+  &__inner {
+    padding-top: fluid(95, 32);
+    padding-bottom: fluid(168, 36);
+  }
+
+  &__title {
+    margin-bottom: fluid(53, 48);
+
+    @include mobile-above {
+      max-width: rem(851);
+    }
+  }
+
+  &__text {
+    column-gap: fluid(24, 8);
+    margin-bottom: fluid(128, 56);
+
+    .line {
+      margin-top: rem(24);
+    }
+
+    h4 {
+
+      @include mobile-above {
+        max-width: rem(674);
+      }
+    }
+  }
+
+  &__tabs {
+    column-gap: fluid(16, 8);
+    margin-bottom: fluid(80, 32);
+    flex-wrap: wrap;
+
+    .swiper-slide {
+      width: fit-content;
+    }
+  }
+
+  &__btn {
+    @include fluid-text(16, 14);
+
+    padding: fluid(10, 8) fluid(14, 12);
+    color: $color-neutral-60;
+
+    @include hover {
+      background: $color-neutral-30;
+    }
+
+    &.is-active {
+      color: $color-neutral-100;
+      text-decoration: underline;
+    }
+  }
+
+  &__img-container {
+    aspect-ratio: 515/428;
+
+    @include mobile {
+      aspect-ratio:247/205;
+    }
+  }
+
+  &__swiper-btn-bar {
+    top: 13.6%;
+
+    @include mobile-above {
+      left: calc(100% / 2.7 + #{rem(10)});
+    }
+
+    @include mobile {
+      @include square(40);
+
+      top: 25%;
+      left: auto;
+      right: calc(100% / 6.4);
+    }
+  }
+  h4 {
+    margin: 0;
+  }
+
+  &__info {
+    max-width: rem(493);
+  }
+}

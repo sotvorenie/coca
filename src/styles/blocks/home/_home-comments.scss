@@ -37,41 +37,12 @@
     }
 
     &-btn-bar {
-      z-index: 1;
       right: 0;
       bottom: 0;
-      column-gap: fluid(16, 8);
       margin-bottom: rem(3);
 
       @include mobile {
         margin-bottom: rem(11);
-      }
-
-      button {
-        @include square(50);
-        @include flex-center();
-
-        border-radius: 50%;
-
-        &:not(.active) {
-          border: $border-grey-40;
-          background: transparent;
-          color: $color-neutral-40;
-          pointer-events: none;
-        }
-
-        &.active {
-          background: $color-neutral-100;
-          color: $color-neutral-10;
-
-          @include hover {
-            filter: brightness(2);
-          }
-        }
-
-        @include mobile {
-          @include square(28);
-        }
       }
     }
   }

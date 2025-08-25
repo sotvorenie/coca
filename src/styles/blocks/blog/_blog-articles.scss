@@ -1,0 +1,65 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.blog-articles {
+
+  &__inner {
+    padding-top: fluid(160, 56);
+    padding-bottom: fluid(220, 80);
+  }
+
+  &__header {
+    margin-bottom: fluid(80, 32);
+    gap: rem(24);
+
+    div {
+      @include mobile-above {
+        max-width: rem(435);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: fluid(24, 16);
+  }
+
+  &__slide {
+
+    &:nth-child(1n) {
+
+      .img-container {
+        height: fluid(577, 374);
+      }
+    }
+
+    &:nth-child(2n) {
+
+      .img-container {
+        height: fluid(329, 213);
+      }
+    }
+
+    &:nth-child(3n) {
+
+      .img-container {
+        height: fluid(695, 412);
+      }
+    }
+  }
+
+  &__img-container {
+    margin-bottom: fluid(24, 16);
+  }
+
+  &__name {
+    margin-bottom: fluid(16, 8);
+  }
+
+  &__about {
+    margin-bottom: fluid(24, 16);
+  }
+
+  &__btn {
+    padding-inline: fluid(46, 24);
+  }
+}

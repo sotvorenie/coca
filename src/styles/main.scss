@@ -15,6 +15,7 @@
 @use 'blocks/sponsors';
 @use 'blocks/swiper-arrows';
 @use 'blocks/swiper-slide-info';
+@use 'blocks/swiper-controllers';
 
 @use 'blocks/header/header';
 @use 'blocks/header/header-burger';
@@ -41,3 +42,7 @@
 
 @use 'blocks/contacts/contacts-map';
 @use 'blocks/contacts/contacts-form';
+
+@use 'blocks/blog/blog-banner';
+@use 'blocks/blog/blog-gallery';
+@use 'blocks/blog/blog-articles';
