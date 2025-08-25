@@ -10,17 +10,21 @@ $color-neutral-60: #7E8492;
 $color-neutral-50: #AFB3BB;
 $color-neutral-40: #CED1D8;
 $color-neutral-30: #EDEDED;
+$color-neutral-20: #F5F5F5;
 $color-neutral-10: #FFFFFF;
 $color-grey-60: #161A3499;
 $color-accent: #1463FF;
 
 $border-dark: 1px solid $color-dark;
+$border-accent: 1px solid $color-accent;
 $border-grey-70: 1px solid $color-neutral-70;
 $border-grey-50: 1px solid $color-neutral-50;
 $border-grey-40: 1px solid $color-neutral-40;
 $border-grey-30: 1px solid $color-neutral-30;
 
 $radius: rem(100);
+$radius-medium: rem(16);
+$radius-regular: rem(12);
 $radius-small: rem(8);
 
 $container-width: rem(1920);

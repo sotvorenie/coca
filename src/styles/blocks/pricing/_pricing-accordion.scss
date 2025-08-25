@@ -1,0 +1,52 @@
+@use '../../helpers/index' as *;
+@use '../../variables' as *;
+
+.pricing-accordion {
+
+  &__inner {
+    padding-top: fluid(82, 0);
+    padding-bottom: fluid(160, 80);
+  }
+
+  &__item {
+    border-bottom: $border-grey-30;
+    padding-bottom: fluid(32, 12);
+
+    @include mobile-above {
+      width: 93%;
+      margin-left: auto;
+      padding-right: rem(10);
+    }
+
+    &:not(:first-child) {
+      padding-top: fluid(56, 24);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+
+      &::-webkit-details-marker {
+        display: none; // убираем дефолтный маркер
+      }
+
+      &::after {
+        @include fluid-text(24, 16);
+
+        content: "+";
+      }
+    }
+
+    &[open] summary::after {
+      content: "−";
+    }
+
+    &[open] .pricing-accordion__title {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__content {
+    max-width: fluid(641, 310);
+  }
+}

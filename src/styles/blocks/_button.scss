@@ -25,6 +25,7 @@
     font-weight: 600;
     color: $color-neutral-100;
     background: $color-neutral-10;
+    border: $border-grey-40;
 
     @include hover {
       background: $color-neutral-100;
